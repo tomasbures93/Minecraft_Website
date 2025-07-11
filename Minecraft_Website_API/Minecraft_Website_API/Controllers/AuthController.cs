@@ -18,6 +18,7 @@ namespace Minecraft_Website_API.Controllers
             _appDbContext = appDbContext;
         }
 
+        // This only allowed for short period of time
         [HttpPost]
         public async Task<IActionResult> Register(RegisterModel model)
         {
@@ -56,7 +57,7 @@ namespace Minecraft_Website_API.Controllers
             var cookieOptions = new CookieOptions
             {
                 HttpOnly = true,
-                Secure = false,         // For HTTPs in production
+                Secure = false,         // false = http ... in production should be HTTPs
                 Expires = DateTime.UtcNow.AddDays(1)
             };
 

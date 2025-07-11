@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react";
-import ChangeLogC from "../components/ChangeLogC";
+import ChangeLogData from "../components/ChangeLogData";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 
@@ -28,7 +28,7 @@ const Changelog = () => {
     <div className="p-2 mt-3 dark-bg rounded">
         {error ? 
             <Error />:
-            <ChangeLogC inhalt={logs}/>}
+            <ChangeLogData inhalt={logs}/>}
     </div>)
 }
 

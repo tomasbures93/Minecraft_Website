@@ -13,23 +13,27 @@ namespace Minecraft_Website_API
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
             builder.Services.AddControllers();
 
+            // CORS for my FrontEnd
+            string website = builder.Configuration.GetSection("CORS").GetSection("website").Value;
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowFrontEnd", options =>
                 {
-                    options.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod();
+                    options.WithOrigins(website).AllowAnyHeader().AllowAnyMethod();
                 });
             });
 
-            builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("inMemoryDb"));
+            // DB connection
+            //builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("inMemoryDb"));
 
+            string connectionString = builder.Configuration.GetConnectionString("MySQL");
+            builder.Services.AddDbContext<AppDbContext>(options => options.UseMySQL(connectionString));
+
+            // JWT Auth
             string key = builder.Configuration.GetSection("JWTtoken").GetSection("SecretKey").Value;
             byte[] bytes = Encoding.UTF8.GetBytes(key);
-
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
                 AddJwtBearer(options =>
                 {
@@ -47,13 +51,19 @@ namespace Minecraft_Website_API
 
             var app = builder.Build();
 
+            using (var scope = app.Services.CreateScope())
+            {
+                var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                context.Database.EnsureCreated();
+            }
+
+
             // Configure the HTTP request pipeline.
 
             app.UseMiddleware<CookieJWTMiddleware>();
 
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseCors("AllowFrontEnd");
 
             app.MapControllers();

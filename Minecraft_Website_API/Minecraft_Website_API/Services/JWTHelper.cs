@@ -21,6 +21,7 @@ namespace Minecraft_Website_API.Services
         public static string GenerateJwtToken(User user)
         {
             string key = configuration.GetSection("JWTtoken").GetSection("SecretKey").Value;
+
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 

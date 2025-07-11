@@ -14,12 +14,8 @@ namespace Minecraft_Website_API.Services
         public DbSet<RulesPage> RulesPage { get; set; }
 
         public DbSet<ChangeLogPage> ChangeLogPage { get; set; }
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<AboutPage>();
-            modelBuilder.Entity<RulesPage>();
-        }
+        public DbSet<ServerInfo> ServerInfo { get; set; }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
     }
 }

@@ -43,6 +43,22 @@
   },
   {
     "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "AddArticle",
+    "RelativePath": "api/Website/AddArticle",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "Minecraft_Website_API.Models.Article",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
     "Method": "AddChangeLog",
     "RelativePath": "api/Website/AddChangeLog",
     "HttpMethod": "POST",
@@ -59,6 +75,22 @@
   },
   {
     "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "DeleteArticle",
+    "RelativePath": "api/Website/DeleteArticle",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
     "Method": "DeleteChangeLog",
     "RelativePath": "api/Website/DeleteChangeLog",
     "HttpMethod": "DELETE",
@@ -69,6 +101,22 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "EditArticle",
+    "RelativePath": "api/Website/EditArticle",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "Minecraft_Website_API.Models.Article",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -131,6 +179,32 @@
   },
   {
     "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "GetServerInfo",
+    "RelativePath": "api/Website/GetServerInfo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "GetSpecificArticle",
+    "RelativePath": "api/Website/GetSpecificArticle/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
     "Method": "UpdateAboutPage",
     "RelativePath": "api/Website/UpdateAboutPage",
     "HttpMethod": "PUT",
@@ -172,6 +246,22 @@
       {
         "Name": "page",
         "Type": "Minecraft_Website_API.Models.RulesPage",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "UpdateServerInfo",
+    "RelativePath": "api/Website/UpdateServerInfo",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "info",
+        "Type": "Minecraft_Website_API.Models.ServerInfo",
         "IsRequired": true
       }
     ],

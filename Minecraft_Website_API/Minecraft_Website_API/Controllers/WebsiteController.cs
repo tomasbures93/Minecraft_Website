@@ -18,6 +18,7 @@ namespace Minecraft_Website_API.Controllers
             _appDbContext = appDbContext;
         }
 
+        #region Public Methods
         [HttpGet]
         [AllowAnonymous]
         public IActionResult GetHomePage()
@@ -25,7 +26,7 @@ namespace Minecraft_Website_API.Controllers
             List<Article> homePage = _appDbContext.HomePage.ToList();
             if(homePage.Count == 0)
             {
-                return Ok("Nothing here");
+                return NoContent();
             }
             return Ok(homePage);
         }
@@ -37,7 +38,7 @@ namespace Minecraft_Website_API.Controllers
             AboutPage about = _appDbContext.AboutPage.FirstOrDefault();
             if(about == null)
             {
-                return Ok("Nothing");
+                return NoContent();
             }
             return Ok(about);
         }
@@ -46,25 +47,57 @@ namespace Minecraft_Website_API.Controllers
         [AllowAnonymous]
         public IActionResult GetRulesPage()
         {
-            RulesPage about = _appDbContext.RulesPage.FirstOrDefault();
-            if (about == null)
+            RulesPage rules = _appDbContext.RulesPage.FirstOrDefault();
+            if (rules == null)
             {
-                return Ok("Nothing");
+                return NoContent();
             }
-            return Ok(about);
+            return Ok(rules);
         }
 
         [HttpGet]
         [AllowAnonymous]
         public IActionResult GetChangeLogPage()
         {
-            List<ChangeLogPage> about = _appDbContext.ChangeLogPage.ToList();
-            if (about == null)
+            List<ChangeLogPage> changeLog = _appDbContext.ChangeLogPage.ToList();
+            if (changeLog == null)
             {
-                return Ok("Nothing");
+                return NoContent();
             }
-            return Ok(about);
+            return Ok(changeLog);
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult GetServerInfo()
+        {
+            ServerInfo info = _appDbContext.ServerInfo.FirstOrDefault();
+            if (info == null) {
+                return NoContent();
+            }
+            return Ok(info);
+        }
+        #endregion
+
+        #region ServerInfo
+        [HttpPut]
+        public IActionResult UpdateServerInfo(ServerInfo info)
+        {
+            ServerInfo infoToUpdate = _appDbContext.ServerInfo.FirstOrDefault();
+            if (infoToUpdate == null)
+            {
+                _appDbContext.ServerInfo.Add(info);
+                _appDbContext.SaveChanges();
+            } else
+            {
+                infoToUpdate.IP = info.IP;
+                infoToUpdate.ServerName = info.ServerName;
+                _appDbContext.Update(infoToUpdate);
+                _appDbContext.SaveChanges();
+            }
+            return Ok("done");
+        }
+        #endregion
 
         #region HomePage
         [HttpGet("{id}")]

@@ -19,7 +19,7 @@ function App() {
       <Router>
         <Header />
         <Navbar />
-        <Server ip={"1.2.3.4:7654"} status={"online"}/>
+        <Server />
         <Routes className="bg-secondary">
           <Route path="/" element={<Home />}/>
           <Route path="/Rules" element={<Rules />} />

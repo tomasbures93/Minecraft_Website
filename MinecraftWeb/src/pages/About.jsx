@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
+import AboutData from "../components/AboutData";
 
 const About = () => {
     const [about, setAbout] = useState("");
@@ -9,7 +10,7 @@ const About = () => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        fetch("http://placeholder")
+        fetch("http://localhost:5089/api/Website/GetAboutPage")
             .then(response => response.json())
             .then(json => {
                 setLoading(false);
@@ -26,7 +27,7 @@ const About = () => {
         <div className="p-2 mt-3 dark-bg rounded">
             {error ? 
                 <Error />:
-                <span>About</span>
+                <AboutData data={about}/>
             }
     </div>)
 }
