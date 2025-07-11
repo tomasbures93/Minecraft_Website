@@ -1,0 +1,180 @@
+[
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Minecraft_Website_API.Models.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.AuthController",
+    "Method": "Logout",
+    "RelativePath": "api/Auth/Logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Minecraft_Website_API.Models.RegisterModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "AddChangeLog",
+    "RelativePath": "api/Website/AddChangeLog",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "Minecraft_Website_API.Models.ChangeLogPage",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "DeleteChangeLog",
+    "RelativePath": "api/Website/DeleteChangeLog",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "GetAboutPage",
+    "RelativePath": "api/Website/GetAboutPage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "GetChangeLogPage",
+    "RelativePath": "api/Website/GetChangeLogPage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "GetChangeLogPage",
+    "RelativePath": "api/Website/GetChangeLogPage/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "GetHomePage",
+    "RelativePath": "api/Website/GetHomePage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "GetRulesPage",
+    "RelativePath": "api/Website/GetRulesPage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "UpdateAboutPage",
+    "RelativePath": "api/Website/UpdateAboutPage",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "Minecraft_Website_API.Models.AboutPage",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "UpdateChangeLog",
+    "RelativePath": "api/Website/UpdateChangeLog",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "Minecraft_Website_API.Models.ChangeLogPage",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "UpdateRulesPage",
+    "RelativePath": "api/Website/UpdateRulesPage",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "Minecraft_Website_API.Models.RulesPage",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,25 @@
+.custom-h-150 {
+  height: 150px;
+  background-image: url(./assets/bg_header.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.darker-bg {
+  background-color: rgb(35, 35, 35);
+}
+
+.dark-bg {
+  background-color: rgb(65, 65, 65);
+}
+
+.nav-item:hover {
+  background-color: rgb(35, 35, 35);
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 767px){
+  .nav-item:hover {
+      padding-left: 10px;
+  }
+}
