@@ -1,12 +1,20 @@
 # Changelog
+
+13.07.2025
+### Api
+- `ServerStatusChecker` class added (background worker for Server status checking)
+- Reworked `GetServerInfo()` method to also give ServerStatus back
+
+### Website
+- Small update of `Server.jsx` ( how it gives data back )
+
+<hr />
+
 11.07.2025
 ### Api
-#### Changed
 - Refactored existing methods:
   - `GET` methods are now publicly accessible
   - `POST`, `PUT`, and `DELETE` methods require a valid JWT token
-
-#### Added
 - Implemented connection to MySQL
 - App can now be fully configured via `appsettings.json`:
   - `ConnectionStrings`
