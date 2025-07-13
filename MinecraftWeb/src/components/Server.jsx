@@ -27,7 +27,11 @@ const Server = () => {
 
     return (
     <div className="p-2 mt-3 dark-bg rounded text-center">
-        <span>Server Name: {info.serverName} | Server IP: {info.ip} | Server Status: {info.status}</span>
+        <div className='d-flex  flex-lg-row flex-column justify-content-evenly'>
+            <div>Server Name: {info.serverName}</div>
+            <div>Server IP: {info.ip}</div>
+            <div>Server Status: {info.status}</div>
+        </div>
     </div>)
 }
 

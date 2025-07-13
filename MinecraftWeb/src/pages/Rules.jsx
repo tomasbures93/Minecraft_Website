@@ -24,11 +24,8 @@ const Rules = () => {
     if(loading) return <Loading />
 
     return (
-    <div className="p-2 mt-3 dark-bg rounded">
-        {error ? 
-            <Error />:
-            <RulesData data={rules} />}
-    </div>)
+        error ? <Error />:<RulesData data={rules} />
+    )
 }
 
 export default Rules

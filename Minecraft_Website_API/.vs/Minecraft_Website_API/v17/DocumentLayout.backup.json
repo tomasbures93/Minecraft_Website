@@ -3,36 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\services\\serverstatuschecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\services\\serverstatuschecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\models\\rulespage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\models\\rulespage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\services\\cookiejwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\services\\cookiejwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\services\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\services\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 390,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,106 +22,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "WebsiteController.cs",
               "DocumentMoniker": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Controllers\\WebsiteController.cs",
               "RelativeDocumentMoniker": "Minecraft_Website_API\\Controllers\\WebsiteController.cs",
               "ToolTip": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Controllers\\WebsiteController.cs",
               "RelativeToolTip": "Minecraft_Website_API\\Controllers\\WebsiteController.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAcwHgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-13T16:31:49.96Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Minecraft_Website_API\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Models\\User.cs",
-              "RelativeToolTip": "Minecraft_Website_API\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T16:27:15.627Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RulesPage.cs",
-              "DocumentMoniker": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Models\\RulesPage.cs",
-              "RelativeDocumentMoniker": "Minecraft_Website_API\\Models\\RulesPage.cs",
-              "ToolTip": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Models\\RulesPage.cs",
-              "RelativeToolTip": "Minecraft_Website_API\\Models\\RulesPage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T16:27:07.676Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ServerStatusChecker.cs",
-              "DocumentMoniker": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Services\\ServerStatusChecker.cs",
-              "RelativeDocumentMoniker": "Minecraft_Website_API\\Services\\ServerStatusChecker.cs",
-              "ToolTip": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Services\\ServerStatusChecker.cs",
-              "RelativeToolTip": "Minecraft_Website_API\\Services\\ServerStatusChecker.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAmwDAAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-13T16:09:45.456Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\appsettings.json",
-              "RelativeDocumentMoniker": "Minecraft_Website_API\\appsettings.json",
-              "ToolTip": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\appsettings.json",
-              "RelativeToolTip": "Minecraft_Website_API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-11T08:47:34.944Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "JWTHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Services\\JWTHelper.cs",
-              "RelativeDocumentMoniker": "Minecraft_Website_API\\Services\\JWTHelper.cs",
-              "ToolTip": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Services\\JWTHelper.cs",
-              "RelativeToolTip": "Minecraft_Website_API\\Services\\JWTHelper.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T08:47:23.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CookieJWTMiddleware.cs",
-              "DocumentMoniker": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Services\\CookieJWTMiddleware.cs",
-              "RelativeDocumentMoniker": "Minecraft_Website_API\\Services\\CookieJWTMiddleware.cs",
-              "ToolTip": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Services\\CookieJWTMiddleware.cs",
-              "RelativeToolTip": "Minecraft_Website_API\\Services\\CookieJWTMiddleware.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T08:47:03.302Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Program.cs",
-              "RelativeDocumentMoniker": "Minecraft_Website_API\\Program.cs",
-              "ToolTip": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Program.cs",
-              "RelativeToolTip": "Minecraft_Website_API\\Program.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwDMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-11T08:44:21.073Z",
               "EditorCaption": ""
             }
           ]

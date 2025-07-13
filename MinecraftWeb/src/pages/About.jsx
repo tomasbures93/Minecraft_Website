@@ -24,12 +24,8 @@ const About = () => {
     if(loading) return <Loading />
 
     return (
-        <div className="p-2 mt-3 dark-bg rounded">
-            {error ? 
-                <Error />:
-                <AboutData data={about}/>
-            }
-    </div>)
+        error ? <Error /> : <AboutData data={about}/>
+            )
 }
     
 export default About

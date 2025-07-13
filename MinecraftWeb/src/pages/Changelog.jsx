@@ -25,11 +25,8 @@ const Changelog = () => {
     if(loading) return <Loading />
 
     return (
-    <div className="p-2 mt-3 dark-bg rounded">
-        {error ? 
-            <Error />:
-            <ChangeLogData inhalt={logs}/>}
-    </div>)
+        error ? <Error /> : <ChangeLogData inhalt={logs}/>
+    )
 }
 
 export default Changelog

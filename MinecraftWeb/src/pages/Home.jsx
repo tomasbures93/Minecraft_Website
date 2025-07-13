@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useEffect } from "react";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
+import HomePageData from "../components/HomePageData";
 
 const Home = () => {
     const [homepage, setHomepage] = useState([]);
@@ -13,7 +14,7 @@ const Home = () => {
             .then(response => response.json())
             .then(json => {
                 setLoading(false);
-                setHomepage(json);
+                setHomepage(json.sort((a , b) => b.id - a.id));
             })
             .catch(() => {
                 setLoading(false);
@@ -24,9 +25,8 @@ const Home = () => {
     if(loading) return <Loading />
 
     return (
-    <div className="p-2 mt-3 dark-bg rounded">
-        {error ? <Error /> : <span>HomePage</span>}
-    </div>)
+        error ? <Error /> : <HomePageData data={homepage}/>
+    )
 }
 
 export default Home
