@@ -6,7 +6,10 @@
 - Reworked `GetServerInfo()` method to also give ServerStatus back
 
 ### Website
-- Small update of `Server.jsx` ( how it gives data back )
+- Small update of `Server.jsx` ( how it gives data back and design )
+- `HomePageData.jsx` redesign how Articles are shown
+- `ChangeLogData.jsx` redesign how Articles are shown
+- Added some text to `Footer.jsx`
 
 <hr />
 
