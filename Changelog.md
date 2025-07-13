@@ -2,11 +2,11 @@
 
 13.07.2025
 ### Api
-- ServerStatusChecker class added (background worker for Server status checking)
-- Reworked GetServerInfo() method to also give ServerStatus back
+- `ServerStatusChecker` class added (background worker for Server status checking)
+- Reworked `GetServerInfo()` method to also give ServerStatus back
 
 ### Website
-- Small update of Server.jsx ( how it gives data back )
+- Small update of `Server.jsx` ( how it gives data back )
 
 <hr />
 
