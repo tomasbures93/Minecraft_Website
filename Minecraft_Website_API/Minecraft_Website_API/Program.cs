@@ -49,6 +49,8 @@ namespace Minecraft_Website_API
                     };
                 });
 
+            builder.Services.AddHostedService<ServerStatusChecker>();
+
             var app = builder.Build();
 
             using (var scope = app.Services.CreateScope())

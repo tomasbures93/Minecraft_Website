@@ -75,7 +75,13 @@ namespace Minecraft_Website_API.Controllers
             if (info == null) {
                 return NoContent();
             }
-            return Ok(info);
+            var infoToShare = new
+            {
+                IP = info.IP,
+                ServerName = info.ServerName,
+                Status = ServerStatusChecker.CurrentStatus
+            };
+            return Ok(infoToShare);
         }
         #endregion
 
