@@ -61,9 +61,9 @@ namespace Minecraft_Website_API
                         key => new FixedWindowRateLimiter(
                             new FixedWindowRateLimiterOptions
                             {
-                                PermitLimit = 1,
+                                PermitLimit = 3,
                                 Window = TimeSpan.FromSeconds(1),
-                                QueueLimit = 0,
+                                QueueLimit = 2,
                                 AutoReplenishment = true
                             })));
             });
