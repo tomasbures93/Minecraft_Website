@@ -23,5 +23,14 @@ namespace Minecraft_Website_API.Models
 
             return false;
         }
+
+        public bool ValidPIN()
+        {
+            string PINstr = PIN.ToString();
+            if (PINstr.Length < 3)
+                return false;
+
+            return true;
+        }
     }
 }

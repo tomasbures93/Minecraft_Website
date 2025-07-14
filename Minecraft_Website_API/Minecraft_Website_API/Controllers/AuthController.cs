@@ -34,6 +34,11 @@ namespace Minecraft_Website_API.Controllers
                 return BadRequest("Must contain at least one uppercase letter (A–Z), Must contain at least one number (0–9), Must contain at least one special character from the set: ! ? _ $ /");
             }
 
+            if (!model.ValidPIN())
+            {
+                return BadRequest("PIN has to be atleast 3 digits long");
+            }
+
             User user = new User { UserName = model.UserName };
             user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.Password);
             user.PINHash = BCrypt.Net.BCrypt.HashString(model.PIN.ToString());
