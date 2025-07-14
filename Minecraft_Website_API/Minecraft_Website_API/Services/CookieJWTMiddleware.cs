@@ -9,6 +9,7 @@
             _next = next;
         }
 
+        // If Cookie found, set as Bearer Token
         public async Task Invoke(HttpContext context)
         {
             var token = context.Request.Cookies["jwt"];

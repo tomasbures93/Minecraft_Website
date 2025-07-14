@@ -104,6 +104,27 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Microsoft.AspNetCore.RateLimiting/7.0.0-rc.2.22476.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0-rc.2.22472.3",
+          "Microsoft.Extensions.Options": "7.0.0-rc.2.22472.3",
+          "System.Threading.RateLimiting": "7.0.0-rc.2.22472.3"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.AspNetCore.RateLimiting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.RateLimiting.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.EntityFrameworkCore/8.0.14": {
         "type": "package",
         "dependencies": {
@@ -146,22 +167,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/_._": {}
-        }
-      },
-      "Microsoft.EntityFrameworkCore.InMemory/8.0.14": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "8.0.14"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
-            "related": ".xml"
-          }
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/8.0.14": {
@@ -837,6 +842,22 @@
           "buildTransitive/net8.0/System.Text.Json.targets": {}
         }
       },
+      "System.Threading.RateLimiting/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Threading.RateLimiting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Threading.RateLimiting.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "System.Threading.Tasks/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1034,6 +1055,21 @@
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
+    "Microsoft.AspNetCore.RateLimiting/7.0.0-rc.2.22476.2": {
+      "sha512": "k3SEHb6sqJE4c4mOxgxhJGD05WoXYRcobZJYgVW8YFDkPf1x418ys8KoMIlsCuqDeiMy7ro54Vn9g36PcVORNQ==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.ratelimiting/7.0.0-rc.2.22476.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net7.0/Microsoft.AspNetCore.RateLimiting.dll",
+        "lib/net7.0/Microsoft.AspNetCore.RateLimiting.xml",
+        "microsoft.aspnetcore.ratelimiting.7.0.0-rc.2.22476.2.nupkg.sha512",
+        "microsoft.aspnetcore.ratelimiting.nuspec"
+      ]
+    },
     "Microsoft.EntityFrameworkCore/8.0.14": {
       "sha512": "HNn+NPKCm7rR7ij7IRCCbuImaMulFJGloyIbMwi3Ews77RsthM8gxpTZciFLgRYPsBtszKpdIClEwnWmP0vjUg==",
       "type": "package",
@@ -1078,21 +1114,6 @@
         "lib/netstandard2.0/_._",
         "microsoft.entityframeworkcore.analyzers.8.0.14.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
-      ]
-    },
-    "Microsoft.EntityFrameworkCore.InMemory/8.0.14": {
-      "sha512": "q0/yGN42dy/ph9tV1ecuvrzpfkGuGdjyfdWNSXylQ0CDUidBCG6o+srOyOPg32gbjV0nLRv9YFkrS4xprXwAew==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.inmemory/8.0.14",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll",
-        "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.xml",
-        "microsoft.entityframeworkcore.inmemory.8.0.14.nupkg.sha512",
-        "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/8.0.14": {
@@ -2489,6 +2510,35 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Threading.RateLimiting/8.0.0": {
+      "sha512": "7mu9v0QDv66ar3DpGSZHg9NuNcxDaaAcnMULuZlaTpP9+hwXhrxNGsF5GmLkSHxFdb5bBc1TzeujsRgTrPWi+Q==",
+      "type": "package",
+      "path": "system.threading.ratelimiting/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Threading.RateLimiting.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Threading.RateLimiting.targets",
+        "lib/net462/System.Threading.RateLimiting.dll",
+        "lib/net462/System.Threading.RateLimiting.xml",
+        "lib/net6.0/System.Threading.RateLimiting.dll",
+        "lib/net6.0/System.Threading.RateLimiting.xml",
+        "lib/net7.0/System.Threading.RateLimiting.dll",
+        "lib/net7.0/System.Threading.RateLimiting.xml",
+        "lib/net8.0/System.Threading.RateLimiting.dll",
+        "lib/net8.0/System.Threading.RateLimiting.xml",
+        "lib/netstandard2.0/System.Threading.RateLimiting.dll",
+        "lib/netstandard2.0/System.Threading.RateLimiting.xml",
+        "system.threading.ratelimiting.8.0.0.nupkg.sha512",
+        "system.threading.ratelimiting.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Threading.Tasks/4.3.0": {
       "sha512": "LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "type": "package",
@@ -2646,29 +2696,30 @@
     "net8.0": [
       "BCrypt.Net-Core >= 1.6.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.14",
+      "Microsoft.AspNetCore.RateLimiting >= 7.0.0-rc.2.22476.2",
       "Microsoft.EntityFrameworkCore >= 8.0.14",
-      "Microsoft.EntityFrameworkCore.InMemory >= 8.0.14",
-      "MySql.EntityFrameworkCore >= 8.0.14"
+      "MySql.EntityFrameworkCore >= 8.0.14",
+      "System.Threading.RateLimiting >= 8.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Furci\\.nuget\\packages\\": {},
+    "C:\\Users\\ITA7-TN01\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Minecraft_Website_API.csproj",
+      "projectUniqueName": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Minecraft_Website_API.csproj",
       "projectName": "Minecraft_Website_API",
-      "projectPath": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Minecraft_Website_API.csproj",
-      "packagesPath": "C:\\Users\\Furci\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\obj\\",
+      "projectPath": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Minecraft_Website_API.csproj",
+      "packagesPath": "C:\\Users\\ITA7-TN01\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Furci\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ITA7-TN01\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2696,7 +2747,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -2710,17 +2761,21 @@
             "target": "Package",
             "version": "[8.0.14, )"
           },
-          "Microsoft.EntityFrameworkCore": {
+          "Microsoft.AspNetCore.RateLimiting": {
             "target": "Package",
-            "version": "[8.0.14, )"
+            "version": "[7.0.0-rc.2.22476.2, )"
           },
-          "Microsoft.EntityFrameworkCore.InMemory": {
+          "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.14, )"
           },
           "MySql.EntityFrameworkCore": {
             "target": "Package",
             "version": "[8.0.14, )"
+          },
+          "System.Threading.RateLimiting": {
+            "target": "Package",
+            "version": "[8.0.0, )"
           }
         },
         "imports": [
@@ -2742,7 +2797,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

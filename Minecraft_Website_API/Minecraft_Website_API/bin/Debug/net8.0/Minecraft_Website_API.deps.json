@@ -10,9 +10,10 @@
         "dependencies": {
           "BCrypt.Net-Core": "1.6.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.14",
+          "Microsoft.AspNetCore.RateLimiting": "7.0.0-rc.2.22476.2",
           "Microsoft.EntityFrameworkCore": "8.0.14",
-          "Microsoft.EntityFrameworkCore.InMemory": "8.0.14",
-          "MySql.EntityFrameworkCore": "8.0.14"
+          "MySql.EntityFrameworkCore": "8.0.14",
+          "System.Threading.RateLimiting": "8.0.0"
         },
         "runtime": {
           "Minecraft_Website_API.dll": {}
@@ -82,6 +83,13 @@
           }
         }
       },
+      "Microsoft.AspNetCore.RateLimiting/7.0.0-rc.2.22476.2": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.2",
+          "Microsoft.Extensions.Options": "8.0.2",
+          "System.Threading.RateLimiting": "8.0.0"
+        }
+      },
       "Microsoft.EntityFrameworkCore/8.0.14": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "8.0.14",
@@ -105,17 +113,6 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/8.0.14": {},
-      "Microsoft.EntityFrameworkCore.InMemory/8.0.14": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "8.0.14"
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
-            "assemblyVersion": "8.0.14.0",
-            "fileVersion": "8.0.1425.11206"
-          }
-        }
-      },
       "Microsoft.EntityFrameworkCore.Relational/8.0.14": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "8.0.14",
@@ -468,6 +465,7 @@
           }
         }
       },
+      "System.Threading.RateLimiting/8.0.0": {},
       "System.Threading.Tasks/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -557,6 +555,13 @@
       "path": "microsoft.aspnetcore.authentication.jwtbearer/8.0.14",
       "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.8.0.14.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.RateLimiting/7.0.0-rc.2.22476.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-k3SEHb6sqJE4c4mOxgxhJGD05WoXYRcobZJYgVW8YFDkPf1x418ys8KoMIlsCuqDeiMy7ro54Vn9g36PcVORNQ==",
+      "path": "microsoft.aspnetcore.ratelimiting/7.0.0-rc.2.22476.2",
+      "hashPath": "microsoft.aspnetcore.ratelimiting.7.0.0-rc.2.22476.2.nupkg.sha512"
+    },
     "Microsoft.EntityFrameworkCore/8.0.14": {
       "type": "package",
       "serviceable": true,
@@ -577,13 +582,6 @@
       "sha512": "sha512-lzNb3s4t5JDMHGoUFuX/f977dFythvmzGFJxvjlhExdiATPKQfquo2NM0uX8Kelfq04jRljpdbRzcsSsK1q9Tw==",
       "path": "microsoft.entityframeworkcore.analyzers/8.0.14",
       "hashPath": "microsoft.entityframeworkcore.analyzers.8.0.14.nupkg.sha512"
-    },
-    "Microsoft.EntityFrameworkCore.InMemory/8.0.14": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-q0/yGN42dy/ph9tV1ecuvrzpfkGuGdjyfdWNSXylQ0CDUidBCG6o+srOyOPg32gbjV0nLRv9YFkrS4xprXwAew==",
-      "path": "microsoft.entityframeworkcore.inmemory/8.0.14",
-      "hashPath": "microsoft.entityframeworkcore.inmemory.8.0.14.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/8.0.14": {
       "type": "package",
@@ -850,6 +848,13 @@
       "sha512": "sha512-js7+qAu/9mQvnhA4EfGMZNEzXtJCDxgkgj8ohuxq/Qxv+R56G+ljefhiJHOxTNiw54q8vmABCWUwkMulNdlZ4A==",
       "path": "system.text.json/9.0.0",
       "hashPath": "system.text.json.9.0.0.nupkg.sha512"
+    },
+    "System.Threading.RateLimiting/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7mu9v0QDv66ar3DpGSZHg9NuNcxDaaAcnMULuZlaTpP9+hwXhrxNGsF5GmLkSHxFdb5bBc1TzeujsRgTrPWi+Q==",
+      "path": "system.threading.ratelimiting/8.0.0",
+      "hashPath": "system.threading.ratelimiting.8.0.0.nupkg.sha512"
     },
     "System.Threading.Tasks/4.3.0": {
       "type": "package",

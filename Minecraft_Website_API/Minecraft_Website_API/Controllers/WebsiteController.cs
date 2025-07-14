@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Minecraft_Website_API.Models;
 using Minecraft_Website_API.Services;
 
@@ -9,6 +10,7 @@ namespace Minecraft_Website_API.Controllers
     [Route("api/[controller]/[action]")]
     [ApiController]
     [Authorize]
+    [EnableRateLimiting("PerIpLimit")]
     public class WebsiteController : ControllerBase
     {
         private readonly AppDbContext _appDbContext;

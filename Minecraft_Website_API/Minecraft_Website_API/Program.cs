@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Minecraft_Website_API.Services;
 using System.Text;
+using System.Threading.RateLimiting;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace Minecraft_Website_API
 {
@@ -26,8 +28,6 @@ namespace Minecraft_Website_API
             });
 
             // DB connection
-            //builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("inMemoryDb"));
-
             string connectionString = builder.Configuration.GetConnectionString("MySQL");
             builder.Services.AddDbContext<AppDbContext>(options => options.UseMySQL(connectionString));
 
@@ -51,6 +51,23 @@ namespace Minecraft_Website_API
 
             builder.Services.AddHostedService<ServerStatusChecker>();
 
+            //Rate Limiting ( 1x per Second per IP )
+            builder.Services.AddRateLimiter(options =>
+            {
+                options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+                options.AddPolicy("PerIpLimit", context =>
+                    RateLimitPartition.Get<string>(
+                        context.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+                        key => new FixedWindowRateLimiter(
+                            new FixedWindowRateLimiterOptions
+                            {
+                                PermitLimit = 1,
+                                Window = TimeSpan.FromSeconds(1),
+                                QueueLimit = 0,
+                                AutoReplenishment = true
+                            })));
+            });
+
             var app = builder.Build();
 
             using (var scope = app.Services.CreateScope())
@@ -66,6 +83,9 @@ namespace Minecraft_Website_API
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseRateLimiter();
+
             app.UseCors("AllowFrontEnd");
 
             app.MapControllers();

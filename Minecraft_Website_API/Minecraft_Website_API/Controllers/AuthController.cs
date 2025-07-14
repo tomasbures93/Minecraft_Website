@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Minecraft_Website_API.Models;
 using Minecraft_Website_API.Services;
@@ -9,6 +10,7 @@ namespace Minecraft_Website_API.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [EnableRateLimiting("PerIpLimit")]
     public class AuthController : ControllerBase
     {
         private readonly AppDbContext _appDbContext;
@@ -27,7 +29,10 @@ namespace Minecraft_Website_API.Controllers
                 return BadRequest("User already exists!");
             }
 
-            // TODO -> password length etc.
+            if (!model.ValidPassword())
+            {
+                return BadRequest("Must contain at least one uppercase letter (A–Z), Must contain at least one number (0–9), Must contain at least one special character from the set: ! ? _ $ /");
+            }
 
             User user = new User { UserName = model.UserName };
             user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.Password);
@@ -61,6 +66,7 @@ namespace Minecraft_Website_API.Controllers
                 Expires = DateTime.UtcNow.AddDays(1)
             };
 
+            //HTTP only cookie
             Response.Cookies.Append("jwt", token, cookieOptions);
 
             return Ok("logged in");

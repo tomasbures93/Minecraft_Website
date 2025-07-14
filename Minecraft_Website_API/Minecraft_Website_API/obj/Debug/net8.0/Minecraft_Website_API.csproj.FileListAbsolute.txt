@@ -64,7 +64,6 @@ C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecr
 C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll

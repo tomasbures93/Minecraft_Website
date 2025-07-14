@@ -9,9 +9,10 @@
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.RateLimiting" Version="7.0.0-rc.2.22476.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.14" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.14" />
     <PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.14" />
+    <PackageReference Include="System.Threading.RateLimiting" Version="8.0.0" />
   </ItemGroup>
 
 </Project>
