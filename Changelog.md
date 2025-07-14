@@ -1,5 +1,12 @@
 # Changelog
 
+14.07.2025
+### API
+- Added RateLimiting ( very primitive DDOS attack protection )
+- Added `ValidPassword()` in RegisterModel ( Password Requirements )
+
+<hr />
+
 13.07.2025
 ### Api
 - `ServerStatusChecker` class added (background worker for Server status checking)
