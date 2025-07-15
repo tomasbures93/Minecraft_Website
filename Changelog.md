@@ -2,8 +2,10 @@
 
 15.07.2025
 ### Website
-- Imported `phosphor-react` package
+- Imported `phosphor-react` package ( icons )
 - Complete redesign of a website
+
+<hr />
 
 14.07.2025
 ### API
