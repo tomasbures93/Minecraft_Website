@@ -1,5 +1,10 @@
 # Changelog
 
+15.07.2025
+### Website
+- Imported `phosphor-react` package
+- Complete redesign of a website
+
 14.07.2025
 ### API
 - Added RateLimiting ( very primitive DDOS attack protection )
