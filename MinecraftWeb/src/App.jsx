@@ -24,7 +24,7 @@ function App() {
         <Header />
         <Navbar />
         <Server />
-        <Routes className="bg-secondary">
+        <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/Rules" element={<Rules />} />
           <Route path="/About" element={<About />} />

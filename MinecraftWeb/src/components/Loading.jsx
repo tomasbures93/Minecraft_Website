@@ -1,6 +1,8 @@
+import { SpinnerGap } from "phosphor-react"
+
 const Loading = () => (
-    <div className="p-2 mt-3 dark-bg rounded text-center">
-        <span>Loading...</span>
+    <div className="p-2 mt-3 text-center card-default warning-card">
+        <span><SpinnerGap size={20} className="spin"/> Loading...</span>
     </div>
 )
 

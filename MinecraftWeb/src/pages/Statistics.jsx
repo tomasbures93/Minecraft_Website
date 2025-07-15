@@ -1,7 +1,7 @@
+import NoData from "../components/NoData"
+
 const Statistics = () => (
-    <div className="p-2 mt-3 dark-bg rounded">
-        <span>Underconstruction - Working on API</span>
-    </div>
+    <NoData />
 )
 
 export default Statistics

@@ -26,11 +26,12 @@ const Server = () => {
     if(loading) return <Loading />
 
     return (
-    <div className="p-2 mt-3 dark-bg rounded text-center">
+    <div className="p-2 mt-3 text-center card-default serverinfo-card">
         <div className='d-flex  flex-lg-row flex-column justify-content-evenly'>
             <div>Server Name: {info.serverName}</div>
             <div>Server IP: {info.ip}</div>
-            <div>Server Status: {info.status}</div>
+            <div>Server Status: {info.status}
+            </div>
         </div>
     </div>)
 }

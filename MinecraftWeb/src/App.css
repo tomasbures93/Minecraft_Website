@@ -3,10 +3,47 @@
   background-image: url(./assets/bg_header.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 12px;
+}
+
+.shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+}
+
+.card-default {
+  background: #2a2a2a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+.serverinfo-card {
+  border-left: 4px solid 	#00bcd4;
+}
+
+.danger-card {
+  border-left: 4px solid 	#e53935;
+}
+
+.article-card {
+  border-left: 4px solid #4caf50;
+}
+
+.warning-card {
+  border-left: 4px solid 	#ffd700;
+}
+
+.darker-text {
+  color: #aaaaaa;
+  font-style: italic;
+}
+
+.navigbar {
+  position: sticky;
+  top: 10px;
 }
 
 .darker-bg {
-  background-color: rgb(35, 35, 35);
+  background-color: #1e1e1e;
 }
 
 .dark-bg {
@@ -14,11 +51,24 @@
 }
 
 .nav-item:hover {
-  background-color: rgb(35, 35, 35);
+  background-color: #4caf50;
   border-radius: 5px;
 }
 
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
 @media only screen and (max-width: 767px){
+  .custom-h-150 {
+    display: none;
+  }
   .nav-item:hover {
       padding-left: 10px;
   }
