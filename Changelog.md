@@ -1,9 +1,19 @@
 # Changelog
 
+15.07.2025
+### Website
+- Imported `phosphor-react` package
+- Complete redesign of a website
+
 14.07.2025
 ### API
 - Added RateLimiting ( very primitive DDOS attack protection )
-- Added `ValidPassword()` in RegisterModel ( Password Requirements )
+- Added `ValidPassword()` and `ValidPIN()` in RegisterModel ( Password Requirements, PIN length Requirements )
+
+### Website
+- Added `Login.jsx` - Login page to get into AdminPanel - basic Design done
+- Added `Impressum.jsx`, `Datenschutz.jsx` and `NotFound.jsx` - still empty pages
+- Moved `Navbar.jsx` from Pages to Components
 
 <hr />
 
