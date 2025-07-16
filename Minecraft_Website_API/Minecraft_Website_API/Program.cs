@@ -23,7 +23,7 @@ namespace Minecraft_Website_API
             {
                 options.AddPolicy("AllowFrontEnd", options =>
                 {
-                    options.WithOrigins(website).AllowAnyHeader().AllowAnyMethod();
+                    options.WithOrigins(website).AllowAnyHeader().AllowAnyMethod().AllowCredentials();
                 });
             });
 
@@ -78,6 +78,7 @@ namespace Minecraft_Website_API
 
 
             // Configure the HTTP request pipeline.
+            app.UseCors("AllowFrontEnd");
 
             app.UseMiddleware<CookieJWTMiddleware>();
 
@@ -86,7 +87,6 @@ namespace Minecraft_Website_API
 
             app.UseRateLimiter();
 
-            app.UseCors("AllowFrontEnd");
 
             app.MapControllers();
 

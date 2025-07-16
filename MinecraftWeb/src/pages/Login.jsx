@@ -1,10 +1,11 @@
-import { Warning } from "phosphor-react";
+import { SpinnerGap, Warning } from "phosphor-react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [formData, setFormData] = useState({ username: "", password: "", pin: ""});
     const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const token = localStorage.getItem('serverAdminToken');
 
@@ -21,7 +22,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
+        setLoading(true);
 
         try{
             const response = await fetch("http://localhost:5089/api/Auth/Login", {
@@ -32,26 +33,31 @@ const Login = () => {
 
             if(!response.ok){
                 setError(true);
+                setLoading(false);
                 throw new Error("Request failed");
             }
 
             const data = response;
             setError(false);
+            setLoading(false);
             localStorage.setItem("serverAdminToken", true);
-            console.log('Success', data);
             navigate('/AdminPage');
         }catch(error){
-            console.log("Error");
+            setLoading(false);
         }
     };
     
     return (
-    <div className="p-3 mt-3 d-flex justify-content-center card-default danger-card">
+    <div className="p-5 mt-3 d-flex justify-content-center card-default danger-card">
         <form onSubmit={handleSubmit}>
             <input type="text" name="username" className="form-control dark-input shadow" id="username" placeholder="username" value={formData.username} onChange={handleChange} />
             <input type="password" name="password" className="form-control dark-input mt-3 shadow" id="password" placeholder="password" value={formData.password} onChange={handleChange}/>
             <input type="password" name="pin" className="form-control dark-input mt-3 shadow" id="pin" placeholder="PIN" value={formData.pin} onChange={handleChange}/>
-            <input type="submit" value="Login" className="form-control btn btn-success shadow mt-3" />
+            {loading ? 
+                <button type="submit" className="form-control btn btn-warning shadow mt-3" disabled><SpinnerGap className="spin" /> Loading...</button>
+                :
+                <input type="submit" value="Login" className="form-control btn btn-success shadow mt-3" />
+            }
             {error && <div className='mt-3 text-center text-danger'><Warning size={20} /> Error</div>}
         </form>
     </div>)

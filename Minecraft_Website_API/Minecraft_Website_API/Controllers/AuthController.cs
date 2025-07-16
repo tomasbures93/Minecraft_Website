@@ -66,8 +66,9 @@ namespace Minecraft_Website_API.Controllers
 
             var cookieOptions = new CookieOptions
             {
-                HttpOnly = true,
+                HttpOnly = true,        
                 Secure = false,         // false = http ... in production should be HTTPs
+                SameSite = SameSiteMode.Lax,
                 Expires = DateTime.UtcNow.AddDays(1)
             };
 

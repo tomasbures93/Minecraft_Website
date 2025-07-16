@@ -8,13 +8,14 @@ import Rules from './pages/Rules';
 import About from './pages/About';
 import Statistics from './pages/Statistics'
 import PrivateRoute from './utils/PrivateRoute';
-import AdminPage from './pages/AdminPage';
+import AdminPage from './pages_admin/AdminPage';
 import Changelog from './pages/Changelog';
 import Server from './components/Server';
 import Login from "./pages/Login";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import NotFound from "./pages/NotFound";
+import LogoutPage from "./pages_admin/LogoutPage";
 
 function App() {
 
@@ -37,8 +38,15 @@ function App() {
           <Route path="/AdminPage" element={
             <PrivateRoute>
               <AdminPage />
+              
             </PrivateRoute>
           } />
+          <Route path="/Logout" element={
+            <PrivateRoute>
+              <LogoutPage />
+            </PrivateRoute>
+          } />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
