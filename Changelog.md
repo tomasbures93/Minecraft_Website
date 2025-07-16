@@ -3,7 +3,9 @@
 16.07.2025
 ### Website
 - `Footer.jsx` , `NotFound.jsx` and `Login.jsx` redesign
-- You can login into `AdminPage.jsx` via `Login.jsx` 
+- You can login into `AdminPage.jsx` via `Login.jsx`
+- Created `NavbarAdmin.jsx` and `LogoutPage.jsx`
+  - LogoutPage does not work / Routing for NavbarAdmin does not work
 
 <hr />
 
