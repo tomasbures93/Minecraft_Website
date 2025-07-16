@@ -1,5 +1,12 @@
 # Changelog
 
+16.07.2025
+### Website
+- `Footer.jsx` , `NotFound.jsx` and `Login.jsx` redesign
+- You can login into `AdminPage.jsx` via `Login.jsx` 
+
+<hr />
+
 15.07.2025
 ### Website
 - Imported `phosphor-react` package ( icons )
