@@ -1,21 +1,60 @@
-const Login = () => (
-    <div className="p-3 mt-3 dark-bg rounded d-flex justify-content-center">
-        <form method="post">
-            <div className="form-floating mb-3">
-                <input type="text" className="form-control" id="floatingInputUserName"/>
-            <label htmlFor="floatingInputUserName">Username</label>
-            </div>
-            <div className="form-floating mb-3">
-                <input type="password" className="form-control" id="floatingInputPassword"/>
-            <label htmlFor="floatingInputPassword">Password</label>
-            </div>
-            <div className="form-floating mb-3">
-                <input type="password" className="form-control" id="floatingInputPIN"/>
-            <label htmlFor="floatingInputPIN">PIN</label>
-            </div>
-            <input type="submit" value="Login" className="form-control btn btn-primary" />
+import { Warning } from "phosphor-react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+const Login = () => {
+    const [formData, setFormData] = useState({ username: "", password: "", pin: ""});
+    const [error, setError] = useState(false);
+    const navigate = useNavigate();
+    const token = localStorage.getItem('serverAdminToken');
+
+    useEffect(() => {
+        if(token === "true") {
+            navigate('/AdminPage');
+        }
+    }, []);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(formData);
+
+        try{
+            const response = await fetch("http://localhost:5089/api/Auth/Login", {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if(!response.ok){
+                setError(true);
+                throw new Error("Request failed");
+            }
+
+            const data = response;
+            setError(false);
+            localStorage.setItem("serverAdminToken", true);
+            console.log('Success', data);
+            navigate('/AdminPage');
+        }catch(error){
+            console.log("Error");
+        }
+    };
+    
+    return (
+    <div className="p-3 mt-3 d-flex justify-content-center card-default danger-card">
+        <form onSubmit={handleSubmit}>
+            <input type="text" name="username" className="form-control dark-input shadow" id="username" placeholder="username" value={formData.username} onChange={handleChange} />
+            <input type="password" name="password" className="form-control dark-input mt-3 shadow" id="password" placeholder="password" value={formData.password} onChange={handleChange}/>
+            <input type="password" name="pin" className="form-control dark-input mt-3 shadow" id="pin" placeholder="PIN" value={formData.pin} onChange={handleChange}/>
+            <input type="submit" value="Login" className="form-control btn btn-success shadow mt-3" />
+            {error && <div className='mt-3 text-center text-danger'><Warning size={20} /> Error</div>}
         </form>
-    </div>
-)
+    </div>)
+}
 
 export default Login

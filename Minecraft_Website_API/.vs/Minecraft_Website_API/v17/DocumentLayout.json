@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\ita7-tn01\\desktop\\github\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\ita7-tn01\\desktop\\github\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\ita7-tn01\\desktop\\github\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\services\\serverstatuschecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\services\\serverstatuschecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\ita7-tn01\\desktop\\github\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\ita7-tn01\\desktop\\github\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\ita7-tn01\\desktop\\github\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\models\\changelogpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 390,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,7 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Minecraft_Website_API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Minecraft_Website_API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowC0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T13:05:26.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ChangeLogPage.cs",
               "DocumentMoniker": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Models\\ChangeLogPage.cs",
               "RelativeDocumentMoniker": "Minecraft_Website_API\\Models\\ChangeLogPage.cs",
@@ -58,38 +75,37 @@
               "RelativeToolTip": "Minecraft_Website_API\\Models\\ChangeLogPage.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T11:35:03.208Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T11:35:03.208Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "WebsiteController.cs",
               "DocumentMoniker": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Controllers\\WebsiteController.cs",
               "RelativeDocumentMoniker": "Minecraft_Website_API\\Controllers\\WebsiteController.cs",
               "ToolTip": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Controllers\\WebsiteController.cs",
               "RelativeToolTip": "Minecraft_Website_API\\Controllers\\WebsiteController.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAIwFUAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowKcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-14T11:57:38.246Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ServerStatusChecker.cs",
               "DocumentMoniker": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Services\\ServerStatusChecker.cs",
               "RelativeDocumentMoniker": "Minecraft_Website_API\\Services\\ServerStatusChecker.cs",
               "ToolTip": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Services\\ServerStatusChecker.cs",
               "RelativeToolTip": "Minecraft_Website_API\\Services\\ServerStatusChecker.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACQAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAcAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-14T11:16:11.873Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\appsettings.json",
               "RelativeDocumentMoniker": "Minecraft_Website_API\\appsettings.json",
@@ -97,12 +113,11 @@
               "RelativeToolTip": "Minecraft_Website_API\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-14T10:28:39.062Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-14T10:28:39.062Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "RegisterModel.cs",
               "DocumentMoniker": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Models\\RegisterModel.cs",
               "RelativeDocumentMoniker": "Minecraft_Website_API\\Models\\RegisterModel.cs",
@@ -114,13 +129,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Program.cs",
               "RelativeDocumentMoniker": "Minecraft_Website_API\\Program.cs",
               "ToolTip": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Program.cs",
               "RelativeToolTip": "Minecraft_Website_API\\Program.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAqwC0AAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAD4v1EAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-14T09:25:12.189Z",
               "EditorCaption": ""
