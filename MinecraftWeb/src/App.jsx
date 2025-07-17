@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
 import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer';
@@ -18,13 +19,26 @@ import NotFound from "./pages/NotFound";
 import LogoutPage from "./pages_admin/LogoutPage";
 
 function App() {
+  const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+          fetch("https://localhost:7198/api/Website/GetServerInfo")
+              .then(response => response.json())
+              .then(json => {
+                  setInfo(json);
+              })
+              .catch(() => {
+                  console.log("Problem while fetching data")
+              })
+      }, []);
+
 
   return (
     <div className='container'>
       <Router>
         <Header />
         <Navbar />
-        <Server />
+        <Server data={info}/>
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/Rules" element={<Rules />} />
@@ -37,7 +51,7 @@ function App() {
 
           <Route path="/AdminPage" element={
             <PrivateRoute>
-              <AdminPage />
+              <AdminPage data={info}/>
               
             </PrivateRoute>
           } />
@@ -49,7 +63,7 @@ function App() {
 
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer />
+        <Footer data={info}/>
       </Router>
     </div>
   )

@@ -80,8 +80,12 @@ namespace Minecraft_Website_API.Controllers
             var infoToShare = new
             {
                 IP = info.IP,
+                Port = info.Port,
                 ServerName = info.ServerName,
-                Status = ServerStatusChecker.CurrentStatus
+                Status = ServerStatusChecker.CurrentStatus,
+                Discord = info.DiscordLink,
+                Email = info.ContactEmail,
+                GameVersion = info.GameVersion
             };
             return Ok(infoToShare);
         }
@@ -99,7 +103,10 @@ namespace Minecraft_Website_API.Controllers
             } else
             {
                 infoToUpdate.IP = info.IP;
+                infoToUpdate.Port = info.Port;
                 infoToUpdate.ServerName = info.ServerName;
+                infoToUpdate.DiscordLink = info.DiscordLink;
+                infoToUpdate.ContactEmail = info.ContactEmail;
                 _appDbContext.Update(infoToUpdate);
                 _appDbContext.SaveChanges();
             }

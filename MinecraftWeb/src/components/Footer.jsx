@@ -1,24 +1,27 @@
 import { Copyright, DiscordLogo, Envelope, IdentificationBadge, ShieldCheck } from "phosphor-react"
 import { NavLink } from "react-router-dom"
 
-const Footer = () => (
+const Footer = ({data}) => {
+  const email = "mailto:" + data.email;
+
+  return (
     <footer className="py-4 mt-3 mb-3 card-default serverinfo-card">
     <div className="container">
       <div className="row text-center text-md-start">
         <div className="col-md-6 mb-3">
           <div className="mb-2">
-            <a href="https://discord.gg/yourlink"
+            <a href={data.discord}
               target="_blank"
               className="navlink text-light text-decoration-none">
               <DiscordLogo size={20} className="me-2" />Discord
             </a>
           </div>
           <div className="mb-2">
-            <a href="mailto:support@example.com"
+            <a href={email}
               className="navlink text-light text-decoration-none">
               <Envelope size={20} className="me-2" />Contact</a>
           </div>
-          <div>Minecraft <strong>Java</strong> Edition 1.21.4</div>
+          <div>Minecraft <strong>{data.gameVersion}</strong></div>
         </div>
         <div className="col-md-6 mb-3 text-md-end">
           <div className="mb-2">
@@ -35,12 +38,13 @@ const Footer = () => (
           </div>
           <div className="mt-2">
             <Copyright size={20} className="me-2" />
-            2025 Wanna Be Anarchy Server
+            2025 <NavLink to="/AdminPage" className="navlink">{data.serverName}</NavLink>
           </div>
         </div>
       </div>
     </div>
     </footer>
 )
+}
 
 export default Footer
