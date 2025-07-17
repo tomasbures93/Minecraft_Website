@@ -4,11 +4,12 @@
 ### API
 - Added support for `HTTPS` debugging (due to the use of `HttpOnly` and `Secure` cookies).
 - ⚠️ Note: A **self-signed certificate** is now required when running the application locally.
+- Added more properties to `ServerInfo` class 
 
 ### Website
 - Fixed issue with setting `HttpOnly` cookies on the frontend. Users can now log in and log out successfully.
-
-- From now on you might need SelfSignedCertificate if you want to run it local
+- Moved fetching of `ServerInfo` data from `Footer.jsx` to `App.jsx` for improved structure and centralized state management.
+- Started development on `AdminPage.jsx` to allow editing and saving of website information.
   
 <hr />
 
