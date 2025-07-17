@@ -1,5 +1,17 @@
 # Changelog
 
+17.07.2025
+### API
+- Added support for `HTTPS` debugging (due to the use of `HttpOnly` and `Secure` cookies).
+- ⚠️ Note: A **self-signed certificate** is now required when running the application locally.
+
+### Website
+- Fixed issue with setting `HttpOnly` cookies on the frontend. Users can now log in and log out successfully.
+
+- From now on you might need SelfSignedCertificate if you want to run it local
+  
+<hr />
+
 16.07.2025
 ### Website
 - `Footer.jsx` , `NotFound.jsx` and `Login.jsx` redesign
