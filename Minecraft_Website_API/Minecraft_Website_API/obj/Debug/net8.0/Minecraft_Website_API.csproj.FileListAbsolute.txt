@@ -112,7 +112,6 @@ C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecr
 C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Minecraft_Website_API.props
 C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Minecraft_Website_API.props
 C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\obj\Debug\net8.0\Minecraf.6948CD33.Up2Date
 C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\obj\Debug\net8.0\Minecraft_Website_API.dll
 C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\obj\Debug\net8.0\refint\Minecraft_Website_API.dll
@@ -191,3 +190,6 @@ C:\Users\Furci\Desktop\GitHub repos\Minecraft_Website\Minecraft_Website_API\Mine
 C:\Users\Furci\Desktop\GitHub repos\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\obj\Debug\net8.0\Minecraft_Website_API.pdb
 C:\Users\Furci\Desktop\GitHub repos\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\obj\Debug\net8.0\Minecraft_Website_API.genruntimeconfig.cache
 C:\Users\Furci\Desktop\GitHub repos\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\obj\Debug\net8.0\ref\Minecraft_Website_API.dll
+C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\obj\Debug\net8.0\Minecraft_Website_API.Properties.Resources.resources
+C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\obj\Debug\net8.0\Minecraft_Website_API.csproj.GenerateResource.cache
+C:\Users\ITA7-TN01\Desktop\github\Minecraft_Website\Minecraft_Website_API\Minecraft_Website_API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

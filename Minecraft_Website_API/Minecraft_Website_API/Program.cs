@@ -17,7 +17,7 @@ namespace Minecraft_Website_API
 
             builder.Services.AddControllers();
 
-            // CORS for my FrontEnd
+            // CORS for my Frontend
             string website = builder.Configuration.GetSection("CORS").GetSection("website").Value;
             builder.Services.AddCors(options =>
             {
@@ -76,7 +76,7 @@ namespace Minecraft_Website_API
                 context.Database.EnsureCreated();
             }
 
-
+            app.UseHttpsRedirection();
             // Configure the HTTP request pipeline.
             app.UseCors("AllowFrontEnd");
 

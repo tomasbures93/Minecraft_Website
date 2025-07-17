@@ -6,7 +6,7 @@ const Server = () => {
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
-        fetch("http://localhost:5089/api/Website/GetServerInfo")
+        fetch("https://localhost:7198/api/Website/GetServerInfo")
             .then(response => response.json())
             .then(json => {
                 setLoading(false);

@@ -10,7 +10,7 @@ const Rules = () => {
     const [error, setError] = useState(false)
 
     useEffect(() => {
-        fetch("http://localhost:5089/api/Website/GetRulesPage")
+        fetch("https://localhost:7198/api/Website/GetRulesPage")
             .then(response => response.json())
             .then(json => {
                 setLoading(false);

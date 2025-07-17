@@ -27,16 +27,6 @@
   },
   {
     "ContainingType": "Minecraft_Website_API.Controllers.AuthController",
-    "Method": "ReadCookie",
-    "RelativePath": "api/Auth/ReadCookie/ReadCookie",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Minecraft_Website_API.Controllers.AuthController",
     "Method": "Register",
     "RelativePath": "api/Auth/Register",
     "HttpMethod": "POST",
@@ -49,16 +39,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Minecraft_Website_API.Controllers.AuthController",
-    "Method": "SetCookie",
-    "RelativePath": "api/Auth/SetCookie/SetCookie",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {

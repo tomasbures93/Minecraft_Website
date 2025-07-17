@@ -25,10 +25,11 @@ const Login = () => {
         setLoading(true);
 
         try{
-            const response = await fetch("http://localhost:5089/api/Auth/Login", {
+            const response = await fetch("https://localhost:7198/api/Auth/Login", {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(formData),
+                credentials: 'include'
             });
 
             if(!response.ok){

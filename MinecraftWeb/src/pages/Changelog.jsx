@@ -10,7 +10,7 @@ const Changelog = () => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5089/api/Website/GetChangeLogPage')
+        fetch('https://localhost:7198/api/Website/GetChangeLogPage')
             .then(response => response.json())
             .then(json => {
                 setLoading(false);

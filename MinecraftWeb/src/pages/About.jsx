@@ -10,7 +10,7 @@ const About = () => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        fetch("http://localhost:5089/api/Website/GetAboutPage")
+        fetch("https://localhost:7198/api/Website/GetAboutPage")
             .then(response => response.json())
             .then(json => {
                 setLoading(false);
