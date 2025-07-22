@@ -1,13 +1,14 @@
 import { SpinnerGap, Warning } from "phosphor-react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ErrorAdmin from "../components_admin/ErrorAdmin";
 
 const Login = () => {
     const [formData, setFormData] = useState({ username: "", password: "", pin: ""});
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
-    const token = localStorage.getItem('serverAdminToken');
+    const token = sessionStorage.getItem('serverAdminToken');
 
     useEffect(() => {
         if(token === "true") {
@@ -41,7 +42,7 @@ const Login = () => {
             const data = response;
             setError(false);
             setLoading(false);
-            localStorage.setItem("serverAdminToken", true);
+            sessionStorage.setItem("serverAdminToken", true);
             navigate('/AdminPage');
         }catch(error){
             setLoading(false);
@@ -59,7 +60,7 @@ const Login = () => {
                 :
                 <input type="submit" value="Login" className="form-control btn btn-success shadow mt-3" />
             }
-            {error && <div className='mt-3 text-center text-danger'><Warning size={20} /> Error</div>}
+            {error && <ErrorAdmin />}
         </form>
     </div>)
 }

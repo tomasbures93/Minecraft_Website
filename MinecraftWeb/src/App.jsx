@@ -17,6 +17,7 @@ import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import NotFound from "./pages/NotFound";
 import LogoutPage from "./pages_admin/LogoutPage";
+import RulesPage from "./pages_admin/RulesPage";
 
 function App() {
   const [info, setInfo] = useState([]);
@@ -52,12 +53,16 @@ function App() {
           <Route path="/AdminPage" element={
             <PrivateRoute>
               <AdminPage data={info}/>
-              
             </PrivateRoute>
           } />
           <Route path="/Logout" element={
             <PrivateRoute>
               <LogoutPage />
+            </PrivateRoute>
+          } />
+          <Route path="/AdminRules" element={
+            <PrivateRoute>
+              <RulesPage />
             </PrivateRoute>
           } />
 

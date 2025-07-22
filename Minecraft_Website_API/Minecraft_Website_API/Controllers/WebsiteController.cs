@@ -93,7 +93,7 @@ namespace Minecraft_Website_API.Controllers
 
         #region ServerInfo
         [HttpPut]
-        public IActionResult UpdateServerInfo(ServerInfo info)
+        public IActionResult UpdateServerInfo([FromBody] ServerInfo info)
         {
             ServerInfo infoToUpdate = _appDbContext.ServerInfo.FirstOrDefault();
             if (infoToUpdate == null)

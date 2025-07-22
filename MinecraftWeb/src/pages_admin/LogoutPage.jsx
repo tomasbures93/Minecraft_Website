@@ -13,7 +13,7 @@ const LogoutPage = () => {
         });
 
         if(response.ok){
-            localStorage.removeItem("serverAdminToken");
+            sessionStorage.removeItem("serverAdminToken");
             console.log("logged out")
             navigate("/Login");
         } else {

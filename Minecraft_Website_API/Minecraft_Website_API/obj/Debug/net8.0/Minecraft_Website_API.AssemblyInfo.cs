@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Minecraft_Website_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fec2d370e7b603b7c8f48e673f7ced504257008d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1956ad9f000d60812edda01fab65272a25f9152e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Minecraft_Website_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Minecraft_Website_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

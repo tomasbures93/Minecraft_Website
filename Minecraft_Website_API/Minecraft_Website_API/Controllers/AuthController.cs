@@ -50,7 +50,7 @@ namespace Minecraft_Website_API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LoginModel model)
+        public IActionResult Login([FromBody] LoginModel model)
         {
             var User = _appDbContext.Users.FirstOrDefault(u => u.UserName == model.UserName);
 

@@ -13,16 +13,16 @@ const NavbarAdmin = () => (
                         <NavLink to="/AdminPage" className="nav-link text-light">Website</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/HomePage" className="nav-link text-light">HomePage</NavLink>
+                        <NavLink to="/AdminHomePage" className="nav-link text-light">HomePage</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/AboutPage" className="nav-link text-light">About</NavLink>
+                        <NavLink to="/AdminAbout" className="nav-link text-light">About</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/RulesPage" className="nav-link text-light">Rules</NavLink>
+                        <NavLink to="/AdminRules" className="nav-link text-light">Rules</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/ChangelogPage" className="nav-link text-light">Changelog</NavLink>
+                        <NavLink to="/AdminChangeLog" className="nav-link text-light">Changelog</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink to="/Logout" className="nav-link logout text-light">Logout</NavLink>

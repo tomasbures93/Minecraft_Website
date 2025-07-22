@@ -67,6 +67,10 @@
   color: #bbb;
 }
 
+.mc-color {
+  color: #4caf50;
+}
+
 .form-control.dark-input:focus {
   background-color: #2b2b2b;
   color: #fff;
