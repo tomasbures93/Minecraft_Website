@@ -1,5 +1,16 @@
 # Changelog
 
+22.07.2025
+### API
+- Fixed bugs in `Login` and `UpdateServerInfo` methods
+
+### Website
+- Reworked token handling: Instead of storing a real token, the app now sets a flag (token = true) in sessionStorage when a valid JWT is received via HttpOnly cookie. This "pseudo token" is used as a simple marker to control access to the admin panel on the client side.
+- Completed `AdminPage.jsx` - includes full design and backend integration for managing website information.
+- Added `RulesPage.jsx` as blank page for now
+
+<hr />
+
 17.07.2025
 ### API
 - Added support for `HTTPS` debugging (due to the use of `HttpOnly` and `Secure` cookies).
