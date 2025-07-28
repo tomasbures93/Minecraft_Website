@@ -22,7 +22,7 @@ namespace Minecraft_Website_API.Controllers
 
         // This only allowed for short period of time
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterModel model)
+        public async Task<IActionResult> Register([FromBody]RegisterModel model)
         {
             if(await _appDbContext.Users.AnyAsync(u => u.UserName == model.UserName))
             {

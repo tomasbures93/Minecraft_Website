@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nSmPF6dw3I0=",
+  "dgSpecHash": "55tUtmJoO7w=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Furci\\Desktop\\Guthub\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Minecraft_Website_API.csproj",
+  "projectFilePath": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Minecraft_Website_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Furci\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
     "C:\\Users\\Furci\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",

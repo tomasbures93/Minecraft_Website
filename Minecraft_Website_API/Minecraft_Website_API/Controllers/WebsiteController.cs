@@ -174,7 +174,7 @@ namespace Minecraft_Website_API.Controllers
 
         #region Rules
         [HttpPut]
-        public IActionResult UpdateRulesPage(RulesPage page)
+        public IActionResult UpdateRulesPage([FromBody] RulesPage page)
         {
             RulesPage rules = _appDbContext.RulesPage.FirstOrDefault();
             if(rules == null)
@@ -193,7 +193,7 @@ namespace Minecraft_Website_API.Controllers
 
         #region About
         [HttpPut]
-        public IActionResult UpdateAboutPage(AboutPage page)
+        public IActionResult UpdateAboutPage([FromBody] AboutPage page)
         {
             AboutPage about = _appDbContext.AboutPage.FirstOrDefault();
             if(about == null)
