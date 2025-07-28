@@ -1,5 +1,11 @@
 # Changelog
 
+28.07.2025
+### Website
+- Finished `RulesPage.jsx`: fetching and updating rules now works.
+
+<hr />
+
 22.07.2025
 ### API
 - Fixed bugs in `Login` and `UpdateServerInfo` methods
