@@ -8,8 +8,6 @@
 ### Website
 - Finished `RulesPage.jsx`: fetching and updating rules now works.
 
-<hr />
-
 22.07.2025
 ### API
 - Fixed bugs in `Login` and `UpdateServerInfo` methods
@@ -18,8 +16,6 @@
 - Reworked token handling: Instead of storing a real token, the app now sets a flag (token = true) in sessionStorage when a valid JWT is received via HttpOnly cookie. This "pseudo token" is used as a simple marker to control access to the admin panel on the client side.
 - Completed `AdminPage.jsx` - includes full design and backend integration for managing website information.
 - Added `RulesPage.jsx` as blank page for now
-
-<hr />
 
 17.07.2025
 ### API
@@ -31,8 +27,6 @@
 - Fixed issue with setting `HttpOnly` cookies on the frontend. Users can now log in and log out successfully.
 - Moved fetching of `ServerInfo` data from `Footer.jsx` to `App.jsx` for improved structure and centralized state management.
 - Started development on `AdminPage.jsx` to allow editing and saving of website information.
-  
-<hr />
 
 16.07.2025
 ### Website
@@ -41,14 +35,10 @@
 - Created `NavbarAdmin.jsx` and `LogoutPage.jsx`
   - LogoutPage does not work / Routing for NavbarAdmin does not work
 
-<hr />
-
 15.07.2025
 ### Website
 - Imported `phosphor-react` package ( icons )
 - Complete redesign of a website
-
-<hr />
 
 14.07.2025
 ### API
@@ -60,8 +50,6 @@
 - Added `Impressum.jsx`, `Datenschutz.jsx` and `NotFound.jsx` - still empty pages
 - Moved `Navbar.jsx` from Pages to Components
 
-<hr />
-
 13.07.2025
 ### Api
 - `ServerStatusChecker` class added (background worker for Server status checking)
@@ -72,8 +60,6 @@
 - `HomePageData.jsx` redesign how Articles are shown
 - `ChangeLogData.jsx` redesign how Articles are shown
 - Added some text to `Footer.jsx`
-
-<hr />
 
 11.07.2025
 ### Api
