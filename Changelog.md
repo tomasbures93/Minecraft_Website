@@ -1,5 +1,9 @@
 # Changelog
 
+30.07.2025
+### Website
+- Selected text in the textarea can now be wrapped with Markdown syntax using custom buttons (**bold**, _italic_), rendered via `ReactMarkdown`.
+
 28.07.2025
 ### Website
 - Finished `RulesPage.jsx`: fetching and updating rules now works.
