@@ -1,5 +1,14 @@
 # Changelog
 
+04.08.2025
+### Website
+- Created `TextArea.jsx` (Admin component) - Selected text in the textarea can now be wrapped with Markdown syntax using custom buttons (**bold**, _italic_), rendered via `ReactMarkdown`. *This component is reusable and can be integrated into multiple admin pages.*
+- Created `HomePage.jsx` (Admin page) - Admins can now create new articles. *(Edit and Delete functionality coming soon)*
+- Created `ChangelogPage.jsx` (Admin page) - placeholder page for future changelog display.
+
+### Api
+- `WebsiteController` - Added [FromBody] attribute to all methods that require it.
+  
 30.07.2025
 ### Website
 - `RulesPage.jsx` - Selected text in the textarea can now be wrapped with Markdown syntax using custom buttons (**bold**, _italic_), rendered via `ReactMarkdown`. ( This logic is reusable and will also work in other .jsx pages. )
