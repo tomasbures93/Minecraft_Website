@@ -127,7 +127,7 @@ namespace Minecraft_Website_API.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddArticle(Article page)
+        public IActionResult AddArticle([FromBody] Article page)
         {
             if (page == null)
             {
@@ -140,7 +140,7 @@ namespace Minecraft_Website_API.Controllers
             return Ok("Ok");
         }
         [HttpPut]
-        public IActionResult EditArticle(Article page)
+        public IActionResult EditArticle([FromBody] Article page)
         {
             Article articleToEdit = _appDbContext.HomePage.FirstOrDefault(d => d.Id == page.Id);
             if (articleToEdit == null)
@@ -224,7 +224,7 @@ namespace Minecraft_Website_API.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddChangeLog(ChangeLogPage page)
+        public IActionResult AddChangeLog([FromBody] ChangeLogPage page)
         {
             if (page == null)
             {
@@ -238,7 +238,7 @@ namespace Minecraft_Website_API.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateChangeLog(ChangeLogPage page)
+        public IActionResult UpdateChangeLog([FromBody] ChangeLogPage page)
         {
             ChangeLogPage pageToUpdate = _appDbContext.ChangeLogPage.FirstOrDefault(d => d.Id == page.Id);
             if(pageToUpdate == null)
