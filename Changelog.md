@@ -1,5 +1,11 @@
 # Changelog
 
+05.08.2025
+### Website
+- `HomePage.jsx`
+  - Added form validation - Admins can no longer submit empty articles. Both title and text are now required.
+  - Admins can now Edit or Delete articles
+
 04.08.2025
 ### Website
 - Created `TextArea.jsx` (Admin component) - Selected text in the textarea can now be wrapped with Markdown syntax using custom buttons (**bold**, _italic_), rendered via `ReactMarkdown`. *This component is reusable and can be integrated into multiple admin pages.*
