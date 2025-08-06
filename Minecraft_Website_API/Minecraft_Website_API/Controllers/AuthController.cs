@@ -24,6 +24,11 @@ namespace Minecraft_Website_API.Controllers
         [HttpPost]
         public async Task<IActionResult> Register([FromBody]RegisterModel model)
         {
+            int count = _appDbContext.Users.Count();
+            if (count > 0)
+            {
+                return BadRequest("Admin User already exists!");
+            }
             if(await _appDbContext.Users.AnyAsync(u => u.UserName == model.UserName))
             {
                 return BadRequest("User already exists!");

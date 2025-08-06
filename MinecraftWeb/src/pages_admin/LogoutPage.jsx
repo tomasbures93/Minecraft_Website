@@ -17,7 +17,9 @@ const LogoutPage = () => {
             console.log("logged out")
             navigate("/Login");
         } else {
+            sessionStorage.removeItem("serverAdminToken");
             console.log("wtf");
+            navigate("/Login");
         }
         } catch(error){
 
@@ -25,7 +27,9 @@ const LogoutPage = () => {
     }
     logout();
     }, [])
-    return (<>PAPAPA</>)
+    return (
+        <>TO DO KEKW</>
+    )
 }
 
 

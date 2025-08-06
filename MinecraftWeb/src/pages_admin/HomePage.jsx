@@ -3,6 +3,10 @@ import NavbarAdmin from "../components_admin/NavbarAdmin";
 import TextArea from "../components_admin/TextArea";
 import ErrorAdmin from "../components_admin/ErrorAdmin";
 import { CheckCircle, Pencil, SpinnerGap, Trash } from "phosphor-react";
+import ButtonLoading from "../components_admin/ButtonLoading";
+import ButtonNormal from "../components_admin/ButtonNormal";
+import SuccessAdmin from "../components_admin/SuccessAdmin";
+import ErrorForm from "../components_admin/ErrorForm";
 
 const HomePage = () => {
     const [whatToDo, setwhatToDo] = useState(true);
@@ -194,16 +198,16 @@ const HomePage = () => {
                     <div className="mt-4">
                         <form onSubmit={handleSubmit}>
                             <input type="text" id="title" onChange={handleChange} className="form-control dark-input shadow mt-2" value={formData.title} name="title" placeholder="Title"/>
-                            {formError.title && <p className="mt-2 text-danger">{formError.title}</p>}
+                            {formError.title && <ErrorForm text={formError.title} />}
                             <TextArea handleChange={handleChange} value={formData.text}/>
-                            {formError.text && <p className="mt-2 text-danger">{formError.text}</p>}
+                            {formError.text && <ErrorForm text={formError.text} />}
                             {update ?
-                            <button type="submit" className="btn btn-warning mt-3 shadow"><SpinnerGap size={20} className="spin"/> Creating...</button>
+                            <ButtonLoading text="Creating ..." />
                             :
-                            <button type="Submit" className="btn btn-primary mt-2">Create</button>}                       
+                            <ButtonNormal text="Create" />}                       
                         </form>    
                         {error && <ErrorAdmin />}  
-                        {finish && <div className='mt-3 text-center mc-color'><CheckCircle size={20} /> Article Created</div>}  
+                        {finish && <SuccessAdmin text="Article Created" />}  
                     </div>
             :
                     <div className="mt-4 container">
@@ -220,18 +224,19 @@ const HomePage = () => {
                         )}
                         {edit && 
                         <>
+                            <hr />
                             <form onSubmit={handleEditSubmit}>
                                 <input type="text" id="title" onChange={handleChange} className="form-control dark-input shadow mt-2" value={formData.title} name="title" placeholder="Title"/>
-                                {formError.title && <p className="mt-2 text-danger">{formError.title}</p>}
+                                {formError.title && <ErrorForm text={formError.title} />}
                                 <TextArea handleChange={handleChange} value={formData.text}/>
-                                {formError.text && <p className="mt-2 text-danger">{formError.text}</p>}
+                                {formError.text && <ErrorForm text={formError.text} />}
                                 {update ?
-                                <button type="submit" className="btn btn-warning mt-3 shadow"><SpinnerGap size={20} className="spin"/> Updating...</button>
+                                <ButtonLoading text="Updating ..." />
                                 :
-                                <button type="Submit" className="btn btn-primary mt-2">Update</button>}                       
+                                <ButtonNormal text="Update" />}                       
                             </form> 
                             {error && <ErrorAdmin />}  
-                            {finish && <div className='mt-3 text-center mc-color'><CheckCircle size={20} /> Article Updated</div>}  
+                            {finish && <SuccessAdmin text="Article Updated" />}  
                         </>}
                     </div> 
             }

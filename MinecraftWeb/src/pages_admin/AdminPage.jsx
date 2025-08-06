@@ -2,6 +2,9 @@ import { useState, useEffect } from "react"
 import NavbarAdmin from "../components_admin/NavbarAdmin"
 import { CheckCircle, Checks, SpinnerGap } from "phosphor-react";
 import ErrorAdmin from "../components_admin/ErrorAdmin";
+import SuccessAdmin from "../components_admin/SuccessAdmin";
+import ButtonLoading from "../components_admin/ButtonLoading";
+import ButtonNormal from "../components_admin/ButtonNormal";
 
 const AdminPage = ({data}) => {
     const [formData, setformData] = useState({
@@ -96,11 +99,11 @@ const AdminPage = ({data}) => {
                     <input type="email" id="email" name="email" className="form-control dark-input shadow" placeholder="email@email.com" onChange={handleChange} value={formData.email} />
                </div>
                 { update ? 
-                    <button type="submit" className="btn btn-warning mt-3 shadow"><SpinnerGap size={20} className="spin"/> Updating ...</button> : 
-                    <button type="submit" className="btn btn-primary mt-3 shadow">Update</button> 
+                    <ButtonLoading text="Updating ..." /> : 
+                    <ButtonNormal text="Update" />
                 }
                 {error && <ErrorAdmin /> }
-                {finish &&  <div className='mt-3 text-center mc-color'><CheckCircle size={20} /> Info Updated</div>}
+                {finish &&  <SuccessAdmin text="Website info Updated" />}
             </form>
         </div>
     </div>)}

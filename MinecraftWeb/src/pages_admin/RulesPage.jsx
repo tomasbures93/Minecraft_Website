@@ -3,6 +3,9 @@ import NavbarAdmin from "../components_admin/NavbarAdmin";
 import ErrorAdmin from "../components_admin/ErrorAdmin";
 import { useEffect, useState } from "react";
 import TextArea from "../components_admin/TextArea";
+import SuccessAdmin from "../components_admin/SuccessAdmin";
+import ButtonLoading from "../components_admin/ButtonLoading";
+import ButtonNormal from "../components_admin/ButtonNormal";
 
 const RulesPage = () => {
     const [formData, setFormData] = useState([]);
@@ -57,13 +60,12 @@ const RulesPage = () => {
             <h2>Rules Dashboard</h2>
             <form onSubmit={handleSubmit}>
                     <TextArea handleChange={handleChange} name="text" value={formData.text}/>
-
                     { update ?
-                        <button type="submit" className="btn btn-warning mt-3 shadow" disabled><SpinnerGap size={20} className="spin"/>  Updating ...</button> :
-                        <button type="submit" className="mt-3 btn btn-primary shadow">Update</button>
+                        <ButtonLoading text="Updating ..." /> :
+                        <ButtonNormal text="Update" />
                     }
                     {error && <ErrorAdmin /> }
-                    {finish && <div className='mt-3 text-center mc-color'><CheckCircle size={20} /> Rules Updated</div>}
+                    {finish &&  <SuccessAdmin text="Rules Updated" />}
             </form>
         </div>
     )

@@ -1,8 +1,10 @@
 import NavbarAdmin from "../components_admin/NavbarAdmin";
 import { useState, useEffect } from "react";
 import TextArea from "../components_admin/TextArea";
-import { CheckCircle, SpinnerGap } from "phosphor-react";
 import ErrorAdmin from "../components_admin/ErrorAdmin";
+import SuccessAdmin from "../components_admin/SuccessAdmin";
+import ButtonLoading from "../components_admin/ButtonLoading";
+import ButtonNormal from "../components_admin/ButtonNormal";
 
 const AboutPage = () => {
     const [formData, setFormData] = useState([]);
@@ -45,7 +47,6 @@ const AboutPage = () => {
                 setError(true);
                 throw new Error("CRUD - PUT error")
             }
-
         } catch (error){
             setUpdate(false);
             setError(true);
@@ -59,14 +60,13 @@ const AboutPage = () => {
             <NavbarAdmin />
             <h2>About Dashboard</h2>
             <form onSubmit={handleSubmit}>
-                <TextArea handleChange={handleChange} name="text" value={formData.text} />
-                
+                <TextArea handleChange={handleChange} name="text" value={formData.text} /> 
                 {update ? 
-                    <button type="submit" className="btn btn-warning mt-3 shadow" disabled><SpinnerGap size={20} className="spin"/>  Updating ...</button> : 
-                    <button type="submit" className="mt-3 btn btn-primary shadow">Update</button>
+                    <ButtonLoading text="Updating ..." /> : 
+                    <ButtonNormal text="Update" />
                 }
                 {error && <ErrorAdmin />}
-                {finish && <div className='mt-3 text-center mc-color'><CheckCircle size={20} /> About Updated</div>}
+                {finish && <SuccessAdmin text="About Updated" />}
                 </form>
         </div>
     )
