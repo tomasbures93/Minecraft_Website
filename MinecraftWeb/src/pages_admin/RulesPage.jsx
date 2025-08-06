@@ -1,11 +1,10 @@
-import { SpinnerGap, CheckCircle } from "phosphor-react"
 import NavbarAdmin from "../components_admin/NavbarAdmin";
 import ErrorAdmin from "../components_admin/ErrorAdmin";
 import { useEffect, useState } from "react";
 import TextArea from "../components_admin/TextArea";
 import SuccessAdmin from "../components_admin/SuccessAdmin";
 import ButtonLoading from "../components_admin/ButtonLoading";
-import ButtonNormal from "../components_admin/ButtonNormal";
+import ButtonSubmit from "../components_admin/ButtonSubmit";
 
 const RulesPage = () => {
     const [formData, setFormData] = useState([]);
@@ -62,7 +61,7 @@ const RulesPage = () => {
                     <TextArea handleChange={handleChange} name="text" value={formData.text}/>
                     { update ?
                         <ButtonLoading text="Updating ..." /> :
-                        <ButtonNormal text="Update" />
+                        <ButtonSubmit text="Update" />
                     }
                     {error && <ErrorAdmin /> }
                     {finish &&  <SuccessAdmin text="Rules Updated" />}

@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import NavbarAdmin from "../components_admin/NavbarAdmin";
 import TextArea from "../components_admin/TextArea";
 import ErrorAdmin from "../components_admin/ErrorAdmin";
-import { CheckCircle, Pencil, SpinnerGap, Trash } from "phosphor-react";
+import { Pencil, Trash } from "phosphor-react";
 import ButtonLoading from "../components_admin/ButtonLoading";
-import ButtonNormal from "../components_admin/ButtonNormal";
 import SuccessAdmin from "../components_admin/SuccessAdmin";
 import ErrorForm from "../components_admin/ErrorForm";
+import ButtonSubmit from "../components_admin/ButtonSubmit";
 
 const HomePage = () => {
     const [whatToDo, setwhatToDo] = useState(true);
@@ -48,6 +48,7 @@ const HomePage = () => {
                 setUpdate(false);
                 setEdit(false);
                 setFormData({title: '', text: '', datum: new Date().toLocaleDateString()})
+                setFormError({});
                 break;
             case 'edit':
                 setwhatToDo(false);
@@ -56,6 +57,7 @@ const HomePage = () => {
                 setError(false);
                 setUpdate(false);
                 setEdit(false);
+                setFormError({});
                 break;
             default:
                 return;
@@ -157,7 +159,15 @@ const HomePage = () => {
 
     const handleEditSubmit = async (e) => {
         e.preventDefault();
+        const newErrors = validateForm(formData);
+        setFormError(newErrors);
         setUpdate(true);
+        if(Object.keys(newErrors).length === 0){
+            console.log("No Validation Errors");
+        } else {
+            setUpdate(false);
+            return;
+        }
 
         try {
             const response = await fetch('https://localhost:7198/api/Website/EditArticle', {
@@ -204,7 +214,7 @@ const HomePage = () => {
                             {update ?
                             <ButtonLoading text="Creating ..." />
                             :
-                            <ButtonNormal text="Create" />}                       
+                            <ButtonSubmit text="Create" />}                       
                         </form>    
                         {error && <ErrorAdmin />}  
                         {finish && <SuccessAdmin text="Article Created" />}  
@@ -233,7 +243,7 @@ const HomePage = () => {
                                 {update ?
                                 <ButtonLoading text="Updating ..." />
                                 :
-                                <ButtonNormal text="Update" />}                       
+                                <ButtonSubmit text="Update" />}                       
                             </form> 
                             {error && <ErrorAdmin />}  
                             {finish && <SuccessAdmin text="Article Updated" />}  

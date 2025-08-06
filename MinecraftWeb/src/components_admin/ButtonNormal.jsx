@@ -1,5 +1,5 @@
-const ButtonNormal = ({text}) => (
-    <button type="submit" className="mt-3 btn btn-primary shadow">
+const ButtonNormal = ({text, onClick, style}) => (
+    <button type="button" onClick={onClick} className={style}>
         {text}
     </button>
 ) 

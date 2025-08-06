@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react"
 import NavbarAdmin from "../components_admin/NavbarAdmin"
-import { CheckCircle, Checks, SpinnerGap } from "phosphor-react";
 import ErrorAdmin from "../components_admin/ErrorAdmin";
 import SuccessAdmin from "../components_admin/SuccessAdmin";
 import ButtonLoading from "../components_admin/ButtonLoading";
-import ButtonNormal from "../components_admin/ButtonNormal";
+import ButtonSubmit from "../components_admin/ButtonSubmit";
 
 const AdminPage = ({data}) => {
     const [formData, setformData] = useState({
@@ -100,7 +99,7 @@ const AdminPage = ({data}) => {
                </div>
                 { update ? 
                     <ButtonLoading text="Updating ..." /> : 
-                    <ButtonNormal text="Update" />
+                    <ButtonSubmit text="Update" />
                 }
                 {error && <ErrorAdmin /> }
                 {finish &&  <SuccessAdmin text="Website info Updated" />}
