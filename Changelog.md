@@ -6,7 +6,8 @@
 This ensures that the first registered user becomes the admin.
 
 ### Website
-- Created new reusable admin components as part of ongoing refactoring ( `ButtonNormal, ButtonLoading, SuccessAdmin, ErrorForm` ). These components help improve consistency, reduce duplication, and simplify admin UI development.
+- Created new reusable admin components as part of ongoing refactoring ( `ButtonNormal, ButtonLoading, ButtonSubmit, SuccessAdmin, ErrorForm` ). These components help improve consistency, reduce duplication, and simplify admin UI development.
+- Added `Preview.jsx` component — allows admins to preview Markdown-rendered content (e.g. articles) using `ReactMarkdown`.
 
 05.08.2025
 ### Website
