@@ -1,5 +1,13 @@
 # Changelog
 
+06.08.2025
+### Api
+- `Register` method (AuthController) — can now only be called once, and only when no user is currently registered.
+This ensures that the first registered user becomes the admin.
+
+### Website
+- Created new reusable admin components as part of ongoing refactoring ( `ButtonNormal, ButtonLoading, SuccessAdmin, ErrorForm` ). These components help improve consistency, reduce duplication, and simplify admin UI development.
+
 05.08.2025
 ### Website
 - `HomePage.jsx`
