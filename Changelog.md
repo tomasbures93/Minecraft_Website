@@ -1,5 +1,11 @@
 # Changelog
 
+07.08.2025
+### Website
+- Added `ArticleList.jsx` component - displays a list of articles on the admin home page, including:
+  - Title and creation date
+  - Buttons to edit or delete each article
+
 06.08.2025
 ### Api
 - `Register` method (AuthController) — can now only be called once, and only when no user is currently registered.
