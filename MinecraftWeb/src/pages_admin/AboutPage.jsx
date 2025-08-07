@@ -58,8 +58,7 @@ const AboutPage = () => {
         setUpdate(false);
     }
 
-    const handlePreview = (e) => {
-        e.preventDefault();
+    const handlePreview = () => {
         setPreview(prev => !prev);
     }
 

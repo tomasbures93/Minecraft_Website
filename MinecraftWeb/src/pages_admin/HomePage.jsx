@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import NavbarAdmin from "../components_admin/NavbarAdmin";
 import TextArea from "../components_admin/TextArea";
 import ErrorAdmin from "../components_admin/ErrorAdmin";
-import { Pencil, Trash } from "phosphor-react";
 import ButtonLoading from "../components_admin/ButtonLoading";
 import SuccessAdmin from "../components_admin/SuccessAdmin";
 import ErrorForm from "../components_admin/ErrorForm";
 import ButtonSubmit from "../components_admin/ButtonSubmit";
+import ArticleList from "../components_admin/ArticleList";
+import ButtonNormal from "../components_admin/ButtonNormal";
+import Preview from "../components_admin/Preview";
 
 const HomePage = () => {
     const [whatToDo, setwhatToDo] = useState(true);
@@ -17,6 +19,7 @@ const HomePage = () => {
     const [formError, setFormError] = useState({});
     const [articles, setArticles] = useState([]);
     const [edit, setEdit] = useState(false);
+    const [preview, setPreview] = useState(false);
 
     const fetchData = () => {
         fetch('https://localhost:7198/api/Website/GetHomePage')
@@ -39,25 +42,20 @@ const HomePage = () => {
         const button = e.currentTarget;
         const formatType = button.getAttribute('data-format');
 
+        fetchData();
+        setFinish(false);
+        setError(false);
+        setUpdate(false);
+        setEdit(false);
+        setFormError({});
+
         switch(formatType){
             case 'new':
                 setwhatToDo(true);
-                fetchData();
-                setFinish(false);
-                setError(false);
-                setUpdate(false);
-                setEdit(false);
                 setFormData({title: '', text: '', datum: new Date().toLocaleDateString()})
-                setFormError({});
                 break;
             case 'edit':
                 setwhatToDo(false);
-                fetchData();
-                setFinish(false);
-                setError(false);
-                setUpdate(false);
-                setEdit(false);
-                setFormError({});
                 break;
             default:
                 return;
@@ -122,10 +120,8 @@ const HomePage = () => {
         return formError;
     }
 
-    const handleDelete = async (e) =>{
-        const button = e.currentTarget;
-        const id = Number(button.getAttribute('data-id'));
-
+    const handleDelete = async (id) =>{
+        setEdit(false);
         const url = 'https://localhost:7198/api/Website/DeleteArticle?id=' + id;
         try{
             const response = await fetch(url, {
@@ -148,10 +144,8 @@ const HomePage = () => {
         }
     }
 
-    const handleEdit = (e) =>{
+    const handleEdit = (id) =>{
         setEdit(true);
-        const button = e.currentTarget;
-        const id = Number(button.getAttribute('data-id'));
 
         const article = articles.find(item => item.id === id);
         setFormData(article);
@@ -162,6 +156,7 @@ const HomePage = () => {
         const newErrors = validateForm(formData);
         setFormError(newErrors);
         setUpdate(true);
+
         if(Object.keys(newErrors).length === 0){
             console.log("No Validation Errors");
         } else {
@@ -177,8 +172,6 @@ const HomePage = () => {
                 credentials: 'include'
             });
 
-            console.log(formData);
-
             if(response.ok){
                 console.log("Alles gut");
                 setFinish(true);
@@ -193,6 +186,10 @@ const HomePage = () => {
         setUpdate(false);
         setFormData({ title: '', text: '', datum: new Date().toLocaleDateString() });
         fetchData();
+    }
+
+    const handlePreview = () => {
+        setPreview(prev => !prev);
     }
 
     return (
@@ -211,27 +208,19 @@ const HomePage = () => {
                             {formError.title && <ErrorForm text={formError.title} />}
                             <TextArea handleChange={handleChange} value={formData.text}/>
                             {formError.text && <ErrorForm text={formError.text} />}
+                            {preview && <Preview text={formData.text} /> }
                             {update ?
                             <ButtonLoading text="Creating ..." />
                             :
-                            <ButtonSubmit text="Create" />}                       
+                            <ButtonSubmit text="Create" />}    
+                            <ButtonNormal text="Preview" style="mt-3 ms-2 btn btn-secondary shadow" onClick={handlePreview}/>                   
                         </form>    
                         {error && <ErrorAdmin />}  
                         {finish && <SuccessAdmin text="Article Created" />}  
                     </div>
             :
                     <div className="mt-4 container">
-                        {articles.map(item =>
-                            <div className="row mb-2" key={item.id}>
-                                <div className="col-sm middle-sm">
-                                    <b>{item.title}</b> - {item.datum} 
-                                </div>
-                                <div className="col-sm middle-sm normal-end">
-                                    <button className="none" onClick={handleEdit} data-id={item.id}><Pencil size={20} /></button> 
-                                    <button className="none" onClick={handleDelete} data-id={item.id}><Trash size={20} /></button>
-                                </div>
-                            </div>
-                        )}
+                        <ArticleList data={articles} handleEdit={handleEdit} handleDelete={handleDelete} />
                         {edit && 
                         <>
                             <hr />

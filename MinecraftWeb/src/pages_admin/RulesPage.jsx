@@ -5,12 +5,15 @@ import TextArea from "../components_admin/TextArea";
 import SuccessAdmin from "../components_admin/SuccessAdmin";
 import ButtonLoading from "../components_admin/ButtonLoading";
 import ButtonSubmit from "../components_admin/ButtonSubmit";
+import ButtonNormal from "../components_admin/ButtonNormal";
+import Preview from "../components_admin/Preview";
 
 const RulesPage = () => {
     const [formData, setFormData] = useState([]);
     const [update, setUpdate] = useState(false);
     const [finish, setFinish] = useState(false);
     const [error, setError] = useState(false);
+    const [preview, setPreview] = useState(false);
 
     useEffect(() => {
         fetch('https://localhost:7198/api/Website/GetRulesPage')
@@ -53,16 +56,22 @@ const RulesPage = () => {
         setFormData({...formData, [name]: value});
     }
 
+    const handlePreview = () => {
+        setPreview(prev => !prev);
+    }
+
     return (
         <div className="p-4 mt-3 card-default danger-card">
             <NavbarAdmin />
             <h2>Rules Dashboard</h2>
             <form onSubmit={handleSubmit}>
                     <TextArea handleChange={handleChange} name="text" value={formData.text}/>
+                    {preview && <Preview text={formData.text} />}
                     { update ?
                         <ButtonLoading text="Updating ..." /> :
                         <ButtonSubmit text="Update" />
                     }
+                    <ButtonNormal text="Preview" style="mt-3 ms-2 btn btn-secondary shadow" onClick={handlePreview}/>
                     {error && <ErrorAdmin /> }
                     {finish &&  <SuccessAdmin text="Rules Updated" />}
             </form>
