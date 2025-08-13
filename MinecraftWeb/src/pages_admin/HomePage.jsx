@@ -1,14 +1,9 @@
 import { useEffect, useState } from "react";
 import NavbarAdmin from "../components_admin/NavbarAdmin";
-import TextArea from "../components_admin/TextArea";
 import ErrorAdmin from "../components_admin/ErrorAdmin";
-import ButtonLoading from "../components_admin/ButtonLoading";
 import SuccessAdmin from "../components_admin/SuccessAdmin";
-import ErrorForm from "../components_admin/ErrorForm";
-import ButtonSubmit from "../components_admin/ButtonSubmit";
 import ArticleList from "../components_admin/ArticleList";
-import ButtonNormal from "../components_admin/ButtonNormal";
-import Preview from "../components_admin/Preview";
+import Form from "../components_admin/Form";
 
 const HomePage = () => {
     const [whatToDo, setwhatToDo] = useState(true);
@@ -20,6 +15,7 @@ const HomePage = () => {
     const [articles, setArticles] = useState([]);
     const [edit, setEdit] = useState(false);
     const [preview, setPreview] = useState(false);
+    const [delte, setDelete] = useState(false);
 
     const fetchData = () => {
         fetch('https://localhost:7198/api/Website/GetHomePage')
@@ -48,6 +44,7 @@ const HomePage = () => {
         setUpdate(false);
         setEdit(false);
         setFormError({});
+        setDelete(false);
 
         switch(formatType){
             case 'new':
@@ -132,6 +129,7 @@ const HomePage = () => {
 
             if(response.ok){
                 console.log("ok");
+                setDelete(true);
                 setArticles(prev => prev.filter(item => item.id !== id))
             } else {
                 console.log("something went wrong");
@@ -146,6 +144,7 @@ const HomePage = () => {
 
     const handleEdit = (id) =>{
         setEdit(true);
+        setDelete(false);
 
         const article = articles.find(item => item.id === id);
         setFormData(article);
@@ -203,37 +202,36 @@ const HomePage = () => {
             <hr />
             {whatToDo ? 
                     <div className="mt-4">
-                        <form onSubmit={handleSubmit}>
-                            <input type="text" id="title" onChange={handleChange} className="form-control dark-input shadow mt-2" value={formData.title} name="title" placeholder="Title"/>
-                            {formError.title && <ErrorForm text={formError.title} />}
-                            <TextArea handleChange={handleChange} value={formData.text}/>
-                            {formError.text && <ErrorForm text={formError.text} />}
-                            {preview && <Preview text={formData.text} /> }
-                            {update ?
-                            <ButtonLoading text="Creating ..." />
-                            :
-                            <ButtonSubmit text="Create" />}    
-                            <ButtonNormal text="Preview" style="mt-3 ms-2 btn btn-secondary shadow" onClick={handlePreview}/>                   
-                        </form>    
+                        <Form 
+                            handleSubmit={handleSubmit} 
+                            handleChange={handleChange} 
+                            formData={formData}
+                            formError={formError}
+                            preview={preview}
+                            update={update}
+                            handlePreview={handlePreview}
+                            textSubmit="Create"
+                            textLoading="Creating ..."/>   
                         {error && <ErrorAdmin />}  
                         {finish && <SuccessAdmin text="Article Created" />}  
                     </div>
             :
                     <div className="mt-4 container">
                         <ArticleList data={articles} handleEdit={handleEdit} handleDelete={handleDelete} />
+                        {delte && <SuccessAdmin text="Article deleted!" />}
                         {edit && 
                         <>
                             <hr />
-                            <form onSubmit={handleEditSubmit}>
-                                <input type="text" id="title" onChange={handleChange} className="form-control dark-input shadow mt-2" value={formData.title} name="title" placeholder="Title"/>
-                                {formError.title && <ErrorForm text={formError.title} />}
-                                <TextArea handleChange={handleChange} value={formData.text}/>
-                                {formError.text && <ErrorForm text={formError.text} />}
-                                {update ?
-                                <ButtonLoading text="Updating ..." />
-                                :
-                                <ButtonSubmit text="Update" />}                       
-                            </form> 
+                            <Form
+                                handleSubmit={handleEditSubmit}
+                                handleChange={handleChange}
+                                formData={formData}
+                                formError={formError}
+                                preview={preview}
+                                update={update}
+                                handlePreview={handlePreview} 
+                                textSubmit="Update"
+                                textLoading="Updating ..."/>
                             {error && <ErrorAdmin />}  
                             {finish && <SuccessAdmin text="Article Updated" />}  
                         </>}

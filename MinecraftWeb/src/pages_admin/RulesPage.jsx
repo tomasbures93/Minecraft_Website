@@ -7,6 +7,7 @@ import ButtonLoading from "../components_admin/ButtonLoading";
 import ButtonSubmit from "../components_admin/ButtonSubmit";
 import ButtonNormal from "../components_admin/ButtonNormal";
 import Preview from "../components_admin/Preview";
+import ErrorForm from "../components_admin/ErrorForm";
 
 const RulesPage = () => {
     const [formData, setFormData] = useState([]);
@@ -14,6 +15,7 @@ const RulesPage = () => {
     const [finish, setFinish] = useState(false);
     const [error, setError] = useState(false);
     const [preview, setPreview] = useState(false);
+    const [formError, setFormError] = useState({});
 
     useEffect(() => {
         fetch('https://localhost:7198/api/Website/GetRulesPage')
@@ -30,6 +32,17 @@ const RulesPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setUpdate(true);
+
+        const newErrors = validateForm(formData);
+        setFormError(newErrors);
+
+        if(Object.keys(newErrors).length === 0){
+            console.log("Validierung okay");
+        } else {
+            setUpdate(false);
+            return;
+        }
+
         try{
             const response = await fetch('https://localhost:7198/api/Website/UpdateRulesPage',{
                 method: 'PUT', 
@@ -60,12 +73,23 @@ const RulesPage = () => {
         setPreview(prev => !prev);
     }
 
+    const validateForm = (data) =>{
+        const formErrors = {};
+
+        if(!data.text.trim()){
+            formErrors.text = "Input field has to have some Text!";
+        }
+
+        return formErrors;
+    }
+
     return (
         <div className="p-4 mt-3 card-default danger-card">
             <NavbarAdmin />
             <h2>Rules Dashboard</h2>
             <form onSubmit={handleSubmit}>
                     <TextArea handleChange={handleChange} name="text" value={formData.text}/>
+                    {formError.text && <ErrorForm text={formError.text} />}
                     {preview && <Preview text={formData.text} />}
                     { update ?
                         <ButtonLoading text="Updating ..." /> :

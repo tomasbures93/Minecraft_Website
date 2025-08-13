@@ -64,6 +64,8 @@ const TextArea = ({handleChange, value}) => {
             }
         };
 
+        textArea.focus();
+
         handleChange(syntheticEvent);
     }
 

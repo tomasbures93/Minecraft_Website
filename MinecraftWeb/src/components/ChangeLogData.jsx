@@ -9,7 +9,7 @@ const ChangeLogData = ({inhalt}) => {
         <h2>Changelog</h2>
         {inhalt.map(object => (
         <div key={object.id} className='pt-3'>
-            <h5><Calendar size={20}/>  {object.datum}</h5>
+            <h5><Calendar size={20}/>  {object.title}</h5>
             <hr />
             <ReactMarkdown>{object.text}</ReactMarkdown>
         </div>))}

@@ -4,6 +4,8 @@ import ErrorAdmin from "../components_admin/ErrorAdmin";
 import SuccessAdmin from "../components_admin/SuccessAdmin";
 import ButtonLoading from "../components_admin/ButtonLoading";
 import ButtonSubmit from "../components_admin/ButtonSubmit";
+import ErrorForm from "../components_admin/ErrorForm";
+import SingleInput from "../components_admin/SingleInput";
 
 const AdminPage = ({data}) => {
     const [formData, setformData] = useState({
@@ -17,6 +19,7 @@ const AdminPage = ({data}) => {
     const [update, setUpdate] = useState(false);
     const [error, setError] = useState(false);
     const [finish, setFinished] = useState(false);
+    const [formError, setFormError] = useState({});
 
     useEffect(() => {
         if (data) {
@@ -34,11 +37,25 @@ const AdminPage = ({data}) => {
     const handleChange = (e) => {
         const {name, value} = e.target;
         setformData({...formData, [name]: value});
+        console.log(formData);
     };
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
         setUpdate(true);
+
+        const newErrors = validateForm(formData);
+        setFormError(newErrors);
+
+        if(Object.keys(newErrors).length === 0){
+            console.log("No Validation Errors");
+        } else {
+            setUpdate(false);
+            return;
+        }
+
+        console.log(formData);
+
         try{
             const response = await fetch('https://localhost:7198/api/Website/UpdateServerInfo',{
                 method: 'PUT',
@@ -62,6 +79,19 @@ const AdminPage = ({data}) => {
         }
     };
 
+    const validateForm = (data) => {
+        const errors = {};
+
+        if(!data.serverName.trim()){
+            errors.serverName = "Please insert Server Name";
+        }
+        if(!data.gameVersion.trim()){
+            errors.gameVersion = "Please insert Game Version";
+        }
+
+        return errors;
+    }
+
     return (
     <div className="p-4 mt-3 card-default danger-card">
         <NavbarAdmin />
@@ -74,29 +104,39 @@ const AdminPage = ({data}) => {
             <hr />
             <h2 >Website Setup</h2>
             <form onSubmit={handleSubmit}>
-               <div className="mt-2">
-                    <label htmlFor='serverName' className="form-label">Server name</label> 
-                    <input type="text" name="serverName" id="serverName" className="form-control dark-input shadow" placeholder="Best Server" value={formData.serverName} onChange={handleChange}/>
-               </div>
-               <div className="mt-2">
+                <SingleInput 
+                    labelText="Server name"
+                    placeholder="Best Server"
+                    idName="serverName"
+                    value={formData.serverName}
+                    handleChange={handleChange}/>
+                {formError.serverName && <ErrorForm text={formError.serverName} />}
+                <div className="mt-2">
                     <label htmlFor="IP" className="form-label">IP Address & Port</label>
                     <div className="d-flex">
                         <input type="text" name="ip" id="IP" className="form-control dark-input w-75 me-2 shadow" placeholder="192.0.0.1" value={formData.ip} onChange={handleChange}/>
                         <input type="text" name="port" id="port" className="form-control dark-input w-25 shadow" placeholder="25556" value={formData.port} onChange={handleChange}/>
                     </div>
-               </div>
-               <div className="mt-2">
-                    <label htmlFor="gameVersion" className="form-label">Game Version</label>
-                    <input type="text" name="gameVersion" id="gameVersion" className="form-control dark-input shadow" placeholder="Java Edition 1.24.4" value={formData.gameVersion} onChange={handleChange} />
-               </div>
-               <div className="mt-2">
-                    <label htmlFor="discord" className="form-label">Discord Link</label>
-                    <input type="text" id="discord" name="discord" className="form-control dark-input shadow" placeholder="www.discord.gg" onChange={handleChange} value={formData.discord} />
-               </div>
-               <div className="mt-2">
-                    <label htmlFor="email" className="form-label">Contact Email</label>
-                    <input type="email" id="email" name="email" className="form-control dark-input shadow" placeholder="email@email.com" onChange={handleChange} value={formData.email} />
-               </div>
+                </div>
+                <SingleInput
+                    labelText="Game Version"
+                    placeholder="Java Edition 1.24.4"
+                    idName="gameVersion"
+                    value={formData.gameVersion}
+                    handleChange={handleChange} />
+                {formError.gameVersion && <ErrorForm text={formError.gameVersion} />}
+                <SingleInput
+                    labelText="Discord Link"
+                    placeholder="www.discord.gg"
+                    idName="discord"
+                    value={formData.discord}
+                    handleChange={handleChange} />
+                <SingleInput
+                    labelText="Contact Email"
+                    placeholder="email@email.com"
+                    idName="email"
+                    value={formData.email}
+                    handleChange={handleChange} />
                 { update ? 
                     <ButtonLoading text="Updating ..." /> : 
                     <ButtonSubmit text="Update" />

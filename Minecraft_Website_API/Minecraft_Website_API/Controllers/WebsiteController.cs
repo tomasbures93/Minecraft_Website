@@ -105,6 +105,7 @@ namespace Minecraft_Website_API.Controllers
                 infoToUpdate.IP = info.IP;
                 infoToUpdate.Port = info.Port;
                 infoToUpdate.ServerName = info.ServerName;
+                infoToUpdate.GameVersion = info.GameVersion;
                 infoToUpdate.DiscordLink = info.DiscordLink;
                 infoToUpdate.ContactEmail = info.ContactEmail;
                 _appDbContext.Update(infoToUpdate);

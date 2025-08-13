@@ -1,4 +1,6 @@
-﻿namespace Minecraft_Website_API.Models
+﻿using System.Text.Json.Serialization;
+
+namespace Minecraft_Website_API.Models
 {
     public class ChangeLogPage
     {
@@ -6,6 +8,7 @@
 
         public string Text { get; set; }
 
+        [JsonPropertyName("title")]
         public string Datum { get; set; }
     }
 }
