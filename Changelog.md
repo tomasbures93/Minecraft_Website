@@ -1,5 +1,16 @@
 # Changelog
 
+13.08.2025
+### API
+- Fixed bug in UpdateServerInfo where GameVersion was not updated when changed.
+
+### Website
+- Created `Form.jsx` component which handles creating new Articles for homePage
+- Created `SingleInput.jsx` component which handles <input> and <label> in one component
+- Added Validierung to `AboutPage.jsx`, `RulesPage.jsx`, `AdminPage.jsx`
+- `TextArea.jsx` - Cursor is now focused in TextArea after <ReactMarkdown> is clicked
+- Finished `ChangelogPage.jsx` - User can now Create / Edit / Delete changelog articles
+
 07.08.2025
 ### Website
 - Added `ArticleList.jsx` component - displays a list of articles on the admin home page, including:
