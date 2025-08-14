@@ -25,7 +25,7 @@ const ChangelogPage = () => {
     const fetchData = () => {
         fetch('https://localhost:7198/api/Website/GetChangeLogPage')
             .then(response => response.json())
-            .then(json => setChangeLog(json))
+            .then(json => setChangeLog(json.sort((a, b) => b.id - a.id)))
             .catch(() => console.log("Something went wrong !! Fetching data."))
     }
 
