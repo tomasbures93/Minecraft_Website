@@ -4,6 +4,7 @@
 ### Website
 - `Datenschutz.jsx` and `Impressum.jsx` — prefilled with template text; users only need to add their personal information.
 - `ChangeLogData.jsx` — added toggle feature: clicking on a date now shows or hides the changelog for that day.
+- `ModalDialog.jsx` — reusable confirmation dialog for deleting articles. Pops up with **Yes/No** options to ensure the admin truly wants to delete the selected content.
 
 13.08.2025
 ### API
