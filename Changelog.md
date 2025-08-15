@@ -2,6 +2,8 @@
 
 15.08.2025
 ### Website
+- `Datenschutz.jsx` and `Impressum.jsx` — prefilled with template text; users only need to add their personal information.
+- `ChangeLogData.jsx` — added toggle feature: clicking on a date now shows or hides the changelog for that day.
 
 13.08.2025
 ### API
