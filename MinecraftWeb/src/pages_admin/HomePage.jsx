@@ -4,6 +4,7 @@ import ErrorAdmin from "../components_admin/ErrorAdmin";
 import SuccessAdmin from "../components_admin/SuccessAdmin";
 import ArticleList from "../components_admin/ArticleList";
 import Form from "../components_admin/Form";
+import ModalDialog from "../components_admin/ModalDialog";
 
 const HomePage = () => {
     const [whatToDo, setwhatToDo] = useState(true);
@@ -16,6 +17,7 @@ const HomePage = () => {
     const [edit, setEdit] = useState(false);
     const [preview, setPreview] = useState(false);
     const [delte, setDelete] = useState(false);
+    const [id, setId] = useState(0);
 
     const fetchData = () => {
         fetch('https://localhost:7198/api/Website/GetHomePage')
@@ -191,6 +193,10 @@ const HomePage = () => {
         setPreview(prev => !prev);
     }
 
+    const handleId = (id) => {
+        setId(id);
+    }
+
     return (
         <div className="p-4 mt-3 card-default danger-card">
             <NavbarAdmin />
@@ -217,7 +223,8 @@ const HomePage = () => {
                     </div>
             :
                     <div className="mt-4 container">
-                        <ArticleList data={articles} handleEdit={handleEdit} handleDelete={handleDelete} />
+                        <ArticleList data={articles} handleEdit={handleEdit} handleId={handleId}  toggle="modal" target="#exampleModal" />
+                        <ModalDialog handleDelete={handleDelete} id={id} text="Article"/>
                         {delte && <SuccessAdmin text="Article deleted!" />}
                         {edit && 
                         <>

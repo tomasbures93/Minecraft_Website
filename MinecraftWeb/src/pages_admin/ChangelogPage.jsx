@@ -9,6 +9,7 @@ import ErrorAdmin from "../components_admin/ErrorAdmin";
 import SuccessAdmin from "../components_admin/SuccessAdmin";
 import ErrorForm from "../components_admin/ErrorForm";
 import ArticleList from "../components_admin/ArticleList";
+import ModalDialog from "../components_admin/ModalDialog";
 
 const ChangelogPage = () => {
     const [formData, setFormData] = useState({text: '', title: new Date().toLocaleDateString()});
@@ -21,6 +22,7 @@ const ChangelogPage = () => {
     const [formError, setFormError] = useState({});
     const [edit, setEdit] = useState(false);
     const [delte, setDelete] = useState(false);
+    const [id, setId] = useState(0);
 
     const fetchData = () => {
         fetch('https://localhost:7198/api/Website/GetChangeLogPage')
@@ -119,7 +121,7 @@ const ChangelogPage = () => {
 
     const handleDelete = async (id) => {
         setEdit(false);
-         const url = 'https://localhost:7198/api/Website/DeleteChangeLog?id=' + id;
+        const url = 'https://localhost:7198/api/Website/DeleteChangeLog?id=' + id;
         try {
             const response = await fetch(url, {
                 method: 'Delete',
@@ -138,6 +140,10 @@ const ChangelogPage = () => {
             console.log("Problem by deleting", error);
             setError(true);
         }
+    }
+
+    const handleId = (id) => {
+        setId(id);
     }
 
     const handleEditSubmit = async (e) => {
@@ -204,7 +210,8 @@ const ChangelogPage = () => {
                 </div>
                 :
                 <div className="mt-4">
-                    <ArticleList data={changeLog} handleEdit={handleEdit} handleDelete={handleDelete}/>
+                    <ArticleList data={changeLog} handleEdit={handleEdit} handleId={handleId} toggle="modal" target="#exampleModal"/>
+                    <ModalDialog handleDelete={handleDelete} id={id} text="Changelog"/>
                     {delte && <SuccessAdmin text="ChangeLog deleted" />}
                     {edit && <>
                         <form onSubmit={handleEditSubmit}>

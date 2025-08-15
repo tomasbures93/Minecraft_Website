@@ -1,6 +1,6 @@
 import { Pencil, Trash } from "phosphor-react"
 
-const ArticleList = ({data, handleEdit, handleDelete}) => {
+const ArticleList = ({data, handleEdit, toggle, target, handleId}) => {
     return (
         <>
             {data.map(item => 
@@ -10,7 +10,7 @@ const ArticleList = ({data, handleEdit, handleDelete}) => {
                     </div>
                     <div className="col-sm text-end">
                         <button className="none" onClick={() => handleEdit(item.id)}><Pencil size={20} /></button>
-                        <button className="none" onClick={() => handleDelete(item.id)}><Trash size={20} /></button>
+                        <button className="none" data-bs-toggle={toggle} onClick={() => handleId(item.id)} data-bs-target={target}><Trash size={20} /></button>
                     </div>
                 </div>
             )}
