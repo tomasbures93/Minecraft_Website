@@ -42,7 +42,10 @@ const Login = () => {
             const data = response;
             setError(false);
             setLoading(false);
-            sessionStorage.setItem("serverAdminToken", true);
+            const currentDatum = new Date();
+            const datumToUpdate = new Date();
+            const expiringDatum = datumToUpdate.setHours(currentDatum.getHours() + 1);
+            sessionStorage.setItem("serverAdminTokenExp", Number(expiringDatum));
             navigate('/AdminPage');
         }catch(error){
             setLoading(false);

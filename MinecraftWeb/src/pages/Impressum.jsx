@@ -1,6 +1,6 @@
 const Impressum = () => (
     <div className='mt-3 p-3 card-default warning-card'>
-        <h1>Impressum</h1>
+        <h1 className='border-under'>Impressum</h1>
         Angaben gemäß § 5 TMG
 
         <h2 className="mt-4">Name:</h2>

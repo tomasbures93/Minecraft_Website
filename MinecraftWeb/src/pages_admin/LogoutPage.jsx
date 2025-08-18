@@ -12,10 +12,10 @@ const LogoutPage = () => {
         });
 
         if(response.ok){
-            sessionStorage.removeItem("serverAdminToken");
+            sessionStorage.removeItem("serverAdminTokenExp");
             navigate("/Login");
         } else {
-            sessionStorage.removeItem("serverAdminToken");
+            sessionStorage.removeItem("serverAdminTokenExp");
             console.log("Something went wrong!");
             navigate("/Login");
         }

@@ -93,6 +93,15 @@
   border-radius: 5px;
 }
 
+.border-under {
+  border-bottom: 1px solid #4caf4fa1;
+}
+
+.timer {
+  background-color: rgba(250, 33, 33, 0.445);
+  border-radius: 5px;
+}
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);

@@ -1,6 +1,6 @@
 const Datenschutz = () => (
     <div className='mt-3 p-3 card-default warning-card'>
-        <h1>Datenschutzerklärung</h1>
+        <h1 className='border-under'>Datenschutzerklärung</h1>
         <div className="mt-4">
             <h2>1. Verantwortlicher</h2>
             Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO) ist: <br/>

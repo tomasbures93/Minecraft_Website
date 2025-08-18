@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\ita7-tn01\\desktop\\github\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\models\\registermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\ita7-tn01\\desktop\\github\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 390,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +31,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1871095281:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RegisterModel.cs",
+              "DocumentMoniker": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Models\\RegisterModel.cs",
+              "RelativeDocumentMoniker": "Minecraft_Website_API\\Models\\RegisterModel.cs",
+              "ToolTip": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Models\\RegisterModel.cs",
+              "RelativeToolTip": "Minecraft_Website_API\\Models\\RegisterModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T06:03:59.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Minecraft_Website_API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Minecraft_Website_API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T06:02:58.139Z",
+              "EditorCaption": ""
             }
           ]
         }

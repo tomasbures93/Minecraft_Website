@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import LogoutTimer from "./LogoutTimer"
 
 const NavbarAdmin = () => (
     <>
@@ -25,7 +26,10 @@ const NavbarAdmin = () => (
                         <NavLink to="/AdminChangeLog" className="nav-link text-light">Changelog</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to="/Logout" className="nav-link logout text-light">Logout</NavLink>
+                        <NavLink to="/Logout" className="nav-link timer text-light">Logout ( <LogoutTimer /> )</NavLink>
+                    </li>
+                    <li className="nav-item">
+
                     </li>
                 </ul>
             </div>

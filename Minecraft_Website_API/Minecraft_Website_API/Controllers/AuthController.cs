@@ -20,7 +20,6 @@ namespace Minecraft_Website_API.Controllers
             _appDbContext = appDbContext;
         }
 
-        // This only allowed for short period of time
         [HttpPost]
         public async Task<IActionResult> Register([FromBody]RegisterModel model)
         {
