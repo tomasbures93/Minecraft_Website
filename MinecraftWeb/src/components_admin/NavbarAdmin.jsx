@@ -28,9 +28,6 @@ const NavbarAdmin = () => (
                     <li className="nav-item">
                         <NavLink to="/Logout" className="nav-link timer text-light">Logout ( <LogoutTimer /> )</NavLink>
                     </li>
-                    <li className="nav-item">
-
-                    </li>
                 </ul>
             </div>
         </nav>
