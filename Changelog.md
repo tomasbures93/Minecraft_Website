@@ -1,5 +1,10 @@
 # Changelog
 
+18.08.2025
+### Website
+- Updated page titles across all pages — titles now include an underline for improved visual consistency.
+- Created `LogoutTimer.jsx` — displays the remaining session time before the admin’s token expires. Once the timer runs out, the admin is automatically logged out.
+
 15.08.2025
 ### Website
 - `Datenschutz.jsx` and `Impressum.jsx` — prefilled with template text; users only need to add their personal information.
