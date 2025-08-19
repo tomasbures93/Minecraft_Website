@@ -20,9 +20,14 @@ const HomePage = () => {
     const [id, setId] = useState(0);
 
     const fetchData = () => {
-        fetch('https://localhost:7198/api/Website/GetHomePage')
+        fetch('https://localhost:7198/api/Website/GetHomePage', {
+            method: 'GET', 
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include'
+        })
             .then(response => response.json())
             .then(json => {
+                console.log(json);
                 setArticles(json.sort((a , b) => b.id - a.id));
                 })
             .catch(() => {

@@ -159,12 +159,44 @@
   },
   {
     "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "GetChangeLogPagePaged",
+    "RelativePath": "api/Website/GetChangeLogPagePaged",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
     "Method": "GetHomePage",
     "RelativePath": "api/Website/GetHomePage",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Minecraft_Website_API.Controllers.WebsiteController",
+    "Method": "GetHomePagePaged",
+    "RelativePath": "api/Website/GetHomePagePaged",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {

@@ -26,8 +26,7 @@ const Datenschutz = () => (
                 <li className="mt-2">
                     <h6>b) Google Fonts (CDN)</h6>
                     Diese Website verwendet Schriftarten von „Google Fonts“, bereitgestellt durch Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.
-                    Beim Aufruf der Seite werden Schriftarten von Google-Servern geladen. Hierbei kann Google personenbezogene Daten (z. B. IP-Adresse) erfassen. Die Datenverarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einheitlicher Darstellung). Weitere Informationen:
-                    <a href="https://policies.google.com/privacy" target="_blank"> GOOGLE FONTS POLICIES</a>
+                    Beim Aufruf der Seite werden Schriftarten von Google-Servern geladen. Hierbei kann Google personenbezogene Daten (z. B. IP-Adresse) erfassen. Die Datenverarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einheitlicher Darstellung). Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank">GOOGLE FONTS POLICIES</a>
                 </li>
                 <li className="mt-2">
                     <h6>c) Minecraft-Server-Statistiken</h6>

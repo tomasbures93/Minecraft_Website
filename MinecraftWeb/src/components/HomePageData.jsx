@@ -9,7 +9,7 @@ const HomePageData = ({data}) => {
         {data.map(item => 
         <div className="p-3 mt-3 card-default article-card" key={item.id}>
             <h2 className='border-under'>{item.title}</h2>
-            <p><ReactMarkdown>{item.text}</ReactMarkdown></p>
+            <ReactMarkdown>{item.text}</ReactMarkdown>
             <div className='opacity-50 d-flex justify-content-end me-2'>
                 <span className='darker-text'>{item.datum}</span>
             </div>

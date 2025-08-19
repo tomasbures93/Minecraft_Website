@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
 using Minecraft_Website_API.Models;
 using Minecraft_Website_API.Services;
+using System.Linq;
 
 namespace Minecraft_Website_API.Controllers
 {
@@ -21,18 +22,33 @@ namespace Minecraft_Website_API.Controllers
         }
 
         #region Public Methods
+
+
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult GetHomePage()
+        public IActionResult GetHomePagePaged(int page = 1)
         {
-            List<Article> homePage = _appDbContext.HomePage.ToList();
-            if(homePage.Count == 0)
+            if(page < 1)
+            {
+                page = 1;
+            }
+            int articlesCount = _appDbContext.HomePage.Count();
+            int itemsPerPage = 2;
+            int totalPages = (int)Math.Ceiling(articlesCount / (decimal)itemsPerPage);
+            List<Article> homePage = _appDbContext.HomePage.OrderByDescending(d => d.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).ToList();
+            if (homePage.Count == 0)
             {
                 return NoContent();
             }
-            return Ok(homePage);
+            var data =new 
+            {
+                articles = homePage,
+                pagesTotal = totalPages,
+                currentPage = page
+            };
+            return Ok(data);
         }
-        
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult GetAboutPage()
@@ -67,6 +83,31 @@ namespace Minecraft_Website_API.Controllers
                 return NoContent();
             }
             return Ok(changeLog);
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult GetChangeLogPagePaged(int page = 1)
+        {
+            if(page < 1)
+            {
+                page = 1;
+            }
+            int changelogCount = _appDbContext.ChangeLogPage.Count();
+            int itemsPerPage = 5;
+            int totalPages = (int)Math.Ceiling(changelogCount / (double)itemsPerPage);
+            List<ChangeLogPage> changeLog = _appDbContext.ChangeLogPage.OrderByDescending(d => d.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).ToList();
+            if (changeLog.Count == 0)
+            {
+                return NoContent();
+            }
+            var data = new
+            {
+                changelog = changeLog,
+                pagesTotal = totalPages,
+                cuttentPage = page
+            };
+            return Ok(data);
         }
 
         [HttpGet]
@@ -116,6 +157,17 @@ namespace Minecraft_Website_API.Controllers
         #endregion
 
         #region HomePage
+        [HttpGet]
+        public IActionResult GetHomePage()
+        {
+            List<Article> homePage = _appDbContext.HomePage.ToList();
+            if (homePage.Count == 0)
+            {
+                return NoContent();
+            }
+            return Ok(homePage);
+        }
+
         [HttpGet("{id}")]
         public IActionResult GetSpecificArticle(int id)
         {

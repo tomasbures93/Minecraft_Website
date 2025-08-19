@@ -83,6 +83,12 @@
 .darker-bg {
   background-color: #1e1e1e;
 }
+.page-link:hover {
+  background: #4caf50;
+}
+.page-link:active {
+    background: #4caf50;
+}
 
 .dark-bg {
   background-color: rgb(65, 65, 65);
