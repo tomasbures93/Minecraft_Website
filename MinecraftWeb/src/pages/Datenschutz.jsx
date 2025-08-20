@@ -1,4 +1,12 @@
-const Datenschutz = () => (
+import { useEffect } from "react";
+
+const Datenschutz = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    return (
     <div className='mt-3 p-3 card-default warning-card'>
         <h1 className='border-under'>Datenschutzerklärung</h1>
         <div className="mt-4">
@@ -51,6 +59,6 @@ const Datenschutz = () => (
             Diese Datenschutzerklärung kann bei Bedarf angepasst werden, um gesetzlichen Anforderungen zu entsprechen oder Änderungen der Website-Funktionen zu berücksichtigen.
         </div>
     </div>
-)
+)}
 
 export default Datenschutz;

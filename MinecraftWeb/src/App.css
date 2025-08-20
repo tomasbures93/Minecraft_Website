@@ -7,13 +7,18 @@
 }
 
 .shadow {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
 }
 
 .card-default {
   background: #2a2a2a;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
+}
+
+ul.pagination {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .serverinfo-card {

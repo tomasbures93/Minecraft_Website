@@ -5,7 +5,7 @@ const Footer = ({data}) => {
   const email = "mailto:" + data.email;
 
   return (
-    <footer className="py-4 mb-3 card-default serverinfo-card">
+    <footer className="py-4 mt-3 mb-3 card-default serverinfo-card">
     <div className="container">
       <div className="row text-center text-md-start">
         <div className="col-md-6 mb-3">

@@ -33,7 +33,7 @@ namespace Minecraft_Website_API.Controllers
                 page = 1;
             }
             int articlesCount = _appDbContext.HomePage.Count();
-            int itemsPerPage = 2;
+            int itemsPerPage = 5;
             int totalPages = (int)Math.Ceiling(articlesCount / (decimal)itemsPerPage);
             List<Article> homePage = _appDbContext.HomePage.OrderByDescending(d => d.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).ToList();
             if (homePage.Count == 0)
@@ -75,18 +75,6 @@ namespace Minecraft_Website_API.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public IActionResult GetChangeLogPage()
-        {
-            List<ChangeLogPage> changeLog = _appDbContext.ChangeLogPage.ToList();
-            if (changeLog == null)
-            {
-                return NoContent();
-            }
-            return Ok(changeLog);
-        }
-
-        [HttpGet]
-        [AllowAnonymous]
         public IActionResult GetChangeLogPagePaged(int page = 1)
         {
             if(page < 1)
@@ -94,7 +82,7 @@ namespace Minecraft_Website_API.Controllers
                 page = 1;
             }
             int changelogCount = _appDbContext.ChangeLogPage.Count();
-            int itemsPerPage = 5;
+            int itemsPerPage = 8;
             int totalPages = (int)Math.Ceiling(changelogCount / (double)itemsPerPage);
             List<ChangeLogPage> changeLog = _appDbContext.ChangeLogPage.OrderByDescending(d => d.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).ToList();
             if (changeLog.Count == 0)
@@ -265,6 +253,17 @@ namespace Minecraft_Website_API.Controllers
         #endregion
 
         #region ChangeLogPage
+        [HttpGet]
+        public IActionResult GetChangeLogPage()
+        {
+            List<ChangeLogPage> changeLog = _appDbContext.ChangeLogPage.ToList();
+            if (changeLog == null)
+            {
+                return NoContent();
+            }
+            return Ok(changeLog);
+        }
+
         [HttpGet("{id}")]
         public IActionResult GetChangeLogPage(int id)
         {

@@ -25,7 +25,11 @@ const ChangelogPage = () => {
     const [id, setId] = useState(0);
 
     const fetchData = () => {
-        fetch('https://localhost:7198/api/Website/GetChangeLogPage')
+        fetch('https://localhost:7198/api/Website/GetChangeLogPage', {
+            method: 'GET', 
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include'
+        })
             .then(response => response.json())
             .then(json => setChangeLog(json.sort((a, b) => b.id - a.id)))
             .catch(() => console.log("Something went wrong !! Fetching data."))
@@ -86,6 +90,7 @@ const ChangelogPage = () => {
         if(response.ok){
             setUpdate(false);
             setFinish(true);
+            setFormData({text: '', title: new Date().toLocaleDateString()});
         } else {
             setError(true);
             setUpdate(false);
