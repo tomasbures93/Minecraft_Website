@@ -1,10 +1,18 @@
 # Changelog
 
+## 20.08.2025
+### API
+- `GetHomeChangeLogPage` — changed from `[AllowAnonymous]` to requiring authorization.
+
+### Website
+- Fixed margin issue in `Pagination.jsx`
+- Implemented Pagination on the `Changelog.jsx` page
+
 ## 19.08.2025
 ### API
 - `GetHomePage` — changed from `[AllowAnonymous]` to requiring authorization.
 - `GetHomePagePaged` — new function serving as the replacement for `GetHomePage`, with built-in pagination support.
-- `GetChangeLogPagePaged — new function serving as the replacement for `GetChangeLogPage`, with built-in pagination support.
+- `GetChangeLogPagePaged` — new function serving as the replacement for `GetChangeLogPage`, with built-in pagination support.
 
 ### Website
 - `Home.jsx` — reworked to use backend pagination for displaying articles.
