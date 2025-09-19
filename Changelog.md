@@ -1,5 +1,21 @@
 # Changelog
 
+## 19.09.2025
+### API
+- When first installed, the application comes with a default admin user.
+- A `FirstSetup` class seeds the database with initial data, including: Server Info, Article, About Page, Change Log and Rules
+- The `Register` endpoint is now protected with `[Authorize]`. (This may be used in the future or kept for internal use — final decision pending.)
+- Added `PasswordValidate` class to improve password handling and validation.
+- Created `ChangePassword` method to allow users to securely update their password.
+- Created `ChangePIN` method to allow users to update their PIN code.
+- Fixed an issue in `GetChangeLogPagePaged` where pagination was not working properly.
+
+### Website
+- `ChangePassword.jsx` created (implementation pending)
+- `ChangePin.jsx` created (implementation pending)
+- `About.jsx` refactored for improved structure and readability
+- `Changelog.jsx` refactored for improved structure and readability
+
 ## 20.08.2025
 ### API
 - `GetHomeChangeLogPage` — changed from `[AllowAnonymous]` to requiring authorization.
