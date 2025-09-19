@@ -1,31 +1,61 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import { useEffect } from "react";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import AboutData from "../components/AboutData";
+import NoData from "../components/NoData";
+
+const ACTIONS = {
+    FETCH_START: "FETCH_START",
+    FETCH_SUCCESS: "FETCH_SUCCESS",
+    FETCH_ERROR: "FETCH_ERROR",
+}
+
+function aboutReducer(state, action) {
+    switch(action.type){
+        case ACTIONS.FETCH_START:
+            return { loading: true, error: null, about: null };
+        case ACTIONS.FETCH_SUCCESS:
+            return { loading: false, error: null, about: action.payload };
+        case ACTIONS.FETCH_ERROR:
+            return { loading: false, error: action.payload, about: null };
+        default:
+            return state;
+    }
+}
 
 const About = () => {
-    const [about, setAbout] = useState("");
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const [state, dispatch] = useReducer(aboutReducer, {
+        loading: false,
+        error: null,
+        about: null,
+    });
+
+    const { loading, error, about } = state;
 
     useEffect(() => {
-        fetch("https://localhost:7198/api/Website/GetAboutPage")
-            .then(response => response.json())
-            .then(json => {
-                setLoading(false);
-                setAbout(json);
-            }).catch(() => {
-                setLoading(false);
-                setError(true);
-            })
+        const fetchAbout = async () => {
+            dispatch({type: ACTIONS.FETCH_START });
+
+            try{
+                const response = await fetch("https://localhost:7198/api/Website/GetAboutPage");
+                if(!response.ok) throw new Error("Failed to fetch");
+
+                const data = await response.json();
+                dispatch({type: ACTIONS.FETCH_SUCCESS, payload: data });
+            } catch(err){
+                dispatch({type: ACTIONS.FETCH_ERROR, payload: err.message });
+            }
+        };
+
+        fetchAbout();
     }, []);
 
     if(loading) return <Loading />
+    if(error) return <Error />
+    if(!about) return <NoData />
 
-    return (
-        error ? <Error /> : <AboutData data={about}/>
-            )
+    return ( <AboutData data={about}/> )
 }
     
 export default About

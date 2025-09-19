@@ -2703,23 +2703,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ITA7-TN01\\.nuget\\packages\\": {},
+    "C:\\Users\\Furci\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Minecraft_Website_API.csproj",
+      "projectUniqueName": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Minecraft_Website_API.csproj",
       "projectName": "Minecraft_Website_API",
-      "projectPath": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Minecraft_Website_API.csproj",
-      "packagesPath": "C:\\Users\\ITA7-TN01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ITA7-TN01\\Desktop\\github\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\obj\\",
+      "projectPath": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Minecraft_Website_API.csproj",
+      "packagesPath": "C:\\Users\\Furci\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ITA7-TN01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Furci\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2747,7 +2747,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -2797,7 +2797,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

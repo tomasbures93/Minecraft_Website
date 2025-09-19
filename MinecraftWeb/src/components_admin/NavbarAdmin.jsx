@@ -26,6 +26,12 @@ const NavbarAdmin = () => (
                         <NavLink to="/AdminChangeLog" className="nav-link text-light">Changelog</NavLink>
                     </li>
                     <li className="nav-item">
+                        <NavLink to="/ChangePassword" className="nav-link text-light">Change Password</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink to="/ChangePin" className="nav-link text-light">Change PIN</NavLink>
+                    </li>
+                    <li className="nav-item">
                         <NavLink to="/Logout" className="nav-link timer text-light">Logout ( <LogoutTimer /> )</NavLink>
                     </li>
                 </ul>

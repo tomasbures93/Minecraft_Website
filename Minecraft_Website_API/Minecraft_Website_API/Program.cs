@@ -6,6 +6,7 @@ using Minecraft_Website_API.Services;
 using System.Text;
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.RateLimiting;
+using Minecraft_Website_API.Models;
 
 namespace Minecraft_Website_API
 {
@@ -50,6 +51,7 @@ namespace Minecraft_Website_API
                 });
 
             builder.Services.AddHostedService<ServerStatusChecker>();
+            builder.Services.AddSingleton<PasswordValidate>();
 
             //Rate Limiting ( 1x per Second per IP )
             builder.Services.AddRateLimiter(options =>
@@ -74,6 +76,13 @@ namespace Minecraft_Website_API
             {
                 var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
                 context.Database.EnsureCreated();
+
+                int users = context.Users.Count();
+                if(users < 1)
+                {
+                    var firstSetup = new FirstSetup(context);
+                    firstSetup.FillDb();
+                } 
             }
 
             app.UseHttpsRedirection();

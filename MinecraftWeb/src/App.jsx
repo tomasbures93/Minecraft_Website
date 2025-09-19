@@ -21,6 +21,8 @@ import RulesPage from "./pages_admin/RulesPage";
 import AboutPage from "./pages_admin/AboutPage";
 import HomePage from "./pages_admin/HomePage";
 import ChangelogPage from "./pages_admin/ChangelogPage";
+import ChangePassword from "./pages_admin/ChangePassword";
+import ChangePin from "./pages_admin/ChangePin";
 
 function App() {
   const [info, setInfo] = useState([]);
@@ -76,6 +78,16 @@ function App() {
           <Route path="/AdminHomePage" element={
             <PrivateRoute>
               <HomePage />
+            </PrivateRoute>
+          } />
+          <Route path="/ChangePassword" element={
+            <PrivateRoute>
+              <ChangePassword />
+            </PrivateRoute>
+          } />
+          <Route path="/ChangePin" element={
+            <PrivateRoute>
+              <ChangePin />
             </PrivateRoute>
           } />
           <Route path="/AdminChangelog" element={

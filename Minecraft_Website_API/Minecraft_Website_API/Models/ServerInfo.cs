@@ -18,5 +18,6 @@ namespace Minecraft_Website_API.Models
 
         [JsonPropertyName("email")]
         public string ContactEmail { get; set; }
+
     }
 }

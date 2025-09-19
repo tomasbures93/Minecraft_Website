@@ -14,12 +14,15 @@ namespace Minecraft_Website_API.Controllers
     public class AuthController : ControllerBase
     {
         private readonly AppDbContext _appDbContext;
+        private readonly PasswordValidate _validate;
 
-        public AuthController(AppDbContext appDbContext)
+        public AuthController(AppDbContext appDbContext, PasswordValidate validate)
         {
             _appDbContext = appDbContext;
+            _validate = validate;
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Register([FromBody]RegisterModel model)
         {
@@ -32,15 +35,14 @@ namespace Minecraft_Website_API.Controllers
             {
                 return BadRequest("User already exists!");
             }
-
-            if (!model.ValidPassword())
+            if (!_validate.ValidatePassword(model.Password))
             {
-                return BadRequest("Must contain at least one uppercase letter (A–Z), Must contain at least one number (0–9), Must contain at least one special character from the set: ! ? _ $ /");
+                return BadRequest("Must be atleast 8 characters long, Must contain at least one uppercase character (A–Z), Must contain at least one number (0–9), Must contain at least one special character from the set: ! ? _ $ /");
             }
 
-            if (!model.ValidPIN())
+            if (!_validate.ValidatePIN(model.PIN.ToString()))
             {
-                return BadRequest("PIN has to be atleast 3 digits long");
+                return BadRequest("PIN has to be atleast 5 digits long");
             }
 
             User user = new User { UserName = model.UserName };
@@ -80,6 +82,63 @@ namespace Minecraft_Website_API.Controllers
             Response.Cookies.Append("jwt", token, cookieOptions);
 
             return Ok("logged in");
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult ChangePassword([FromBody] ChangePasswordModel model)
+        {
+            User user = _appDbContext.Users.FirstOrDefault();
+            if(user == null 
+                || !BCrypt.Net.BCrypt.Verify(model.OldPassword, user.PasswordHash)
+                || !BCrypt.Net.BCrypt.Verify(model.PIN.ToString(), user.PINHash)) {
+                return BadRequest("Old password or PIN does not match.");
+            }
+            if(BCrypt.Net.BCrypt.Verify(model.NewPassword, user.PasswordHash))
+            {
+                return BadRequest("Your new Password cant be the same as your Old Password");
+            }
+            if (model.NewPassword != model.NewPasswordSecondTime)
+            {
+                return BadRequest("New password does not match");
+            }
+            if (!_validate.ValidatePassword(model.NewPassword))
+            {
+                return BadRequest("Must be atleast 8 characters long, Must contain at least one uppercase character (A–Z), Must contain at least one number (0–9), Must contain at least one special character from the set: ! ? _ $ /");
+            }
+            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(model.NewPassword);
+            _appDbContext.Users.Update(user);
+            _appDbContext.SaveChanges();
+            return Ok("Password Changed");
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult ChangePin([FromBody] ChangePINModel model)
+        {
+            var user = _appDbContext.Users.FirstOrDefault();
+            if(user == null
+                || !BCrypt.Net.BCrypt.Verify(model.Password, user.PasswordHash)
+                || !BCrypt.Net.BCrypt.Verify(model.OldPIN.ToString(), user.PINHash))
+            {
+                return BadRequest("Password or old PIN does not match.");
+            }
+            if(BCrypt.Net.BCrypt.Verify(model.NewPIN.ToString(), user.PINHash))
+            {
+                return BadRequest("Your new PIN cant be the same as your Old PIN");
+            }
+            if(model.NewPIN != model.NewPINSecondTime)
+            {
+                return BadRequest("New PIN does not match");
+            }
+            if (!_validate.ValidatePIN(model.NewPIN.ToString()))
+            {
+                return BadRequest("PIN has to be atleast 5 digits long");
+            }
+            user.PINHash = BCrypt.Net.BCrypt.HashString(model.NewPIN.ToString());
+            _appDbContext.Users.Update(user);
+            _appDbContext.SaveChanges();
+            return Ok("PIN changed");
         }
 
         [HttpPost]

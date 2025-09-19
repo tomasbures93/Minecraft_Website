@@ -10,8 +10,6 @@ const ChangeLogData = ({inhalt}) => {
         setShow(prev => prev === id? null : id);
     }
 
-    if(inhalt.length == 0) return <NoData />
-    
     return (
     <div className="p-3 mt-3 card-default warning-card ">
         <h2 className='border-under'>Changelog</h2>

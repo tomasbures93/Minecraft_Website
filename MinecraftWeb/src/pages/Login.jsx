@@ -53,7 +53,9 @@ const Login = () => {
     };
     
     return (
-    <div className="p-5 mt-3 d-flex justify-content-center card-default danger-card">
+    <div className="mt-3 p-5 d-flex justify-content-center card-default danger-card">
+        <div>
+        <h2 className="pb-2">Login</h2>
         <form onSubmit={handleSubmit}>
             <input type="text" name="username" className="form-control dark-input shadow" id="username" placeholder="username" value={formData.username} onChange={handleChange} />
             <input type="password" name="password" className="form-control dark-input mt-3 shadow" id="password" placeholder="password" value={formData.password} onChange={handleChange}/>
@@ -65,6 +67,7 @@ const Login = () => {
             }
             {error && <ErrorAdmin />}
         </form>
+    </div>
     </div>)
 }
 
