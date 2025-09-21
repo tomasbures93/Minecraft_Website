@@ -1,5 +1,4 @@
-import { useEffect, useReducer } from "react"
-import { useState } from "react";
+import { useEffect, useReducer, useState } from "react"
 import ChangeLogData from "../components/ChangeLogData";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
@@ -27,7 +26,6 @@ function changelogReducer(state, action){
 
 const Changelog = () => {
     const [pagination, setPagination] = useState({pagesTotal: 1, currentPage: 1});
-
     const [state, dispatch] = useReducer(changelogReducer, {
         loading: false,
         error: null,

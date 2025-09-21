@@ -7,7 +7,7 @@
 }
 
 .shadow {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
 }
 
 .card-default {
@@ -89,7 +89,7 @@ ul.pagination {
   background-color: #1e1e1e;
 }
 .page-link:hover {
-  background: #4caf50;
+    background: #4caf50;
 }
 .page-link:active {
     background: #4caf50;
@@ -102,6 +102,10 @@ ul.pagination {
 .nav-item:hover {
   background-color: #4caf50;
   border-radius: 5px;
+}
+
+.active-mc {
+  background-color: #4caf50;
 }
 
 .border-under {

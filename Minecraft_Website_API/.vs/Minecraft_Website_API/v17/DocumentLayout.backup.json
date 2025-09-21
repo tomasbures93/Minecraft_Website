@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\models\\firstsetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\models\\firstsetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\models\\passwordvalidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\models\\passwordvalidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\controllers\\websitecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|c:\\users\\furci\\desktop\\github repos\\minecraft_website\\minecraft_website_api\\minecraft_website_api\\models\\passwordvalidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A3D4D21-800E-422D-B06B-48563026F76D}|Minecraft_Website_API\\Minecraft_Website_API.csproj|solutionrelative:minecraft_website_api\\models\\passwordvalidate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,12 +51,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FirstSetup.cs",
+              "DocumentMoniker": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Models\\FirstSetup.cs",
+              "RelativeDocumentMoniker": "Minecraft_Website_API\\Models\\FirstSetup.cs",
+              "ToolTip": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Models\\FirstSetup.cs",
+              "RelativeToolTip": "Minecraft_Website_API\\Models\\FirstSetup.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T11:04:15.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "WebsiteController.cs",
               "DocumentMoniker": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Controllers\\WebsiteController.cs",
               "RelativeDocumentMoniker": "Minecraft_Website_API\\Controllers\\WebsiteController.cs",
               "ToolTip": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Controllers\\WebsiteController.cs",
               "RelativeToolTip": "Minecraft_Website_API\\Controllers\\WebsiteController.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAIwFMAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAwFMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-19T19:11:26.309Z",
               "EditorCaption": ""
@@ -65,14 +82,14 @@
               "RelativeDocumentMoniker": "Minecraft_Website_API\\Program.cs",
               "ToolTip": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Program.cs",
               "RelativeToolTip": "Minecraft_Website_API\\Program.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAgwEIAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAmwE0AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-19T12:44:18.365Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "PasswordValidate.cs",
               "DocumentMoniker": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Models\\PasswordValidate.cs",
               "RelativeDocumentMoniker": "Minecraft_Website_API\\Models\\PasswordValidate.cs",
@@ -80,8 +97,7 @@
               "RelativeToolTip": "Minecraft_Website_API\\Models\\PasswordValidate.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T12:43:42.394Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-19T12:43:42.394Z"
             },
             {
               "$type": "Document",
@@ -91,10 +107,9 @@
               "RelativeDocumentMoniker": "Minecraft_Website_API\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\Furci\\Desktop\\GitHub repos\\Minecraft_Website\\Minecraft_Website_API\\Minecraft_Website_API\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Minecraft_Website_API\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAHQAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHQAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T07:24:13.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-12T07:24:13.635Z"
             }
           ]
         }

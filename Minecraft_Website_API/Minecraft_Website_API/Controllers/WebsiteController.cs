@@ -32,7 +32,7 @@ namespace Minecraft_Website_API.Controllers
                 page = 1;
             }
             int articlesCount = _appDbContext.HomePage.Count();
-            int itemsPerPage = 5;
+            int itemsPerPage = 6;
             int totalPages = (int)Math.Ceiling(articlesCount / (decimal)itemsPerPage);
             List<Article> homePage = _appDbContext.HomePage.OrderByDescending(d => d.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).ToList();
             if (homePage.Count == 0)
@@ -81,7 +81,7 @@ namespace Minecraft_Website_API.Controllers
                 page = 1;
             }
             int changelogCount = _appDbContext.ChangeLogPage.Count();
-            int itemsPerPage = 2;
+            int itemsPerPage = 8;
             int totalPages = (int)Math.Ceiling(changelogCount / (double)itemsPerPage);
             List<ChangeLogPage> changeLog = _appDbContext.ChangeLogPage.OrderByDescending(d => d.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).ToList();
             if (changeLog.Count == 0)

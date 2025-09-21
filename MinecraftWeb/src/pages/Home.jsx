@@ -1,50 +1,74 @@
-import { useState } from "react"
-import { useEffect } from "react";
+import { useReducer, useState, useEffect } from "react"
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import HomePageData from "../components/HomePageData";
 import Pagination from "../components/Pagination";
+import NoData from "../components/NoData";
+
+const ACTION = {
+    FETCH_START: "FETCH_START",
+    FETCH_SUCCESS: "FETCH_SUCCESS",
+    FETCH_ERROR: "FETCH_ERROR",
+};
+
+function homeReducer(state, action){
+    switch(action.type){
+        case ACTION.FETCH_START:
+            return { loading: true, error: null, homepage: null };
+        case ACTION.FETCH_SUCCESS:
+            return { loading: false, error: null, homepage: action.payload };
+        case ACTION.FETCH_ERROR:
+            return { loading: false, error: action.payload, homepage: null };
+        default:
+            return state;
+    }
+};
 
 const Home = () => {
-    const [homepage, setHomepage] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
     const [pagination, setPagination] = useState({currentPage: 1, pagesTotal: 1});
-    const [page, setPage] = useState(1);
-
-    const url = "https://localhost:7198/api/Website/GetHomePagePaged?page=" + page;
-
-    const fetchData = () => {
-        fetch(url)
-            .then(response => response.json())
-            .then(json => {
-                setLoading(false);
-                setPagination({currentPage: json.currentPage, pagesTotal: json.pagesTotal});
-                setHomepage(json.articles.sort((a , b) => b.id - a.id));
-            })
-            .catch(() => {
-                setLoading(false);
-                setError(true);
-                console.log("here");
-            })
-    }
+    const [state, dispatch] = useReducer(homeReducer, {
+        loading: false,
+        error: null,
+        homepage: null,
+    });
 
     useEffect(() => {
+        const fetchData = async () => {
+            dispatch({type: ACTION.FETCH_START});
+            const url = "https://localhost:7198/api/Website/GetHomePagePaged?page=" + pagination.currentPage;
+
+            try{
+                const response = await fetch(url);
+                if(!response.ok) throw new Error("Failed to fetch");
+
+                const data = await response.json();
+
+                setPagination({currentPage: data.currentPage, pagesTotal: data.pagesTotal});
+                dispatch({type: ACTION.FETCH_SUCCESS, payload: data.articles});
+            } catch(err){
+                dispatch({type: ACTION.FETCH_ERROR, payload: err.message});
+            }
+        }
+        
         fetchData();
         window.scrollTo(0, 0);
-    }, [page]);
+    }, [pagination.currentPage]);
 
-    const handlePage = (page) => {
-        setPage(page);
+    const handlePage = (newPage) => {
+        setPagination(prev => ({
+            ...prev,
+            currentPage: newPage })
+        )
     }
 
-    if(loading) return <Loading />
+    if(state.loading) return <Loading />
+    if(state.error) return <Error />
+    if(!state.homepage) return <NoData />
 
     return (
-        error ? <Error /> : 
         <>
-            <HomePageData data={homepage} />
-            {pagination.pagesTotal > 1 && <Pagination page={page} pagination={pagination} handlePage={handlePage}/>}
+            <HomePageData data={state.homepage} />
+            {pagination.pagesTotal > 1 && <Pagination pagination={pagination} handlePage={handlePage}/>}
         </>
     )
 }

@@ -1,5 +1,4 @@
 import ReactMarkdown from 'react-markdown';
-import NoData from "./NoData";
 import { Calendar } from 'phosphor-react';
 import { useState } from 'react';
 

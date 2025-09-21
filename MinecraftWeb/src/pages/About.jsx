@@ -1,5 +1,4 @@
-import { useState, useReducer } from "react";
-import { useEffect } from "react";
+import { useReducer, useEffect } from "react";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 import AboutData from "../components/AboutData";
