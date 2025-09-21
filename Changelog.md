@@ -1,5 +1,13 @@
 # Changelog
 
+## 21.09.2025
+### Website
+- `Pagination.jsx` fixed issue where currentPage was not visible for user.
+- `Home.jsx` refactored for improved structure and readability
+- `Login.jsx` refactored for improved structure and readability
+- `Rules.jsx` refactored for improved structure and readability
+- `AboutPage.jsx` refactored for improved structure and readability
+
 ## 19.09.2025
 ### API
 - When first installed, the application comes with a default admin user.
