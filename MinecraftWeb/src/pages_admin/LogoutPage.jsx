@@ -6,21 +6,23 @@ const LogoutPage = () => {
 
     const logout = async () => {
         try {
-        const response = await fetch("https://localhost:7198/api/Auth/Logout", {
-            method: 'POST',
-            credentials: 'include'
-        });
+            const response = await fetch("https://localhost:7198/api/Auth/Logout", {
+                method: 'POST',
+                credentials: 'include'
+            });
 
-        if(response.ok){
-            sessionStorage.removeItem("serverAdminTokenExp");
-            navigate("/Login");
-        } else {
-            sessionStorage.removeItem("serverAdminTokenExp");
-            console.log("Something went wrong!");
-            navigate("/Login");
-        }
+            if(response.ok){
+                sessionStorage.removeItem("serverAdminTokenExp");
+                navigate("/Login");
+            } else {
+                sessionStorage.removeItem("serverAdminTokenExp");
+                console.log("Something went wrong!");
+                navigate("/Login");
+            }
         } catch(error){
-            console.log("Something went wrong",error)
+            sessionStorage.removeItem("serverAdminTokenExp");
+            console.log("Something went wrong",error);
+            navigate("/Login");
         }
     }
 

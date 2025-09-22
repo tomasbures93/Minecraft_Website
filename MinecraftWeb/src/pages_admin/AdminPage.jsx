@@ -37,7 +37,6 @@ const AdminPage = ({data}) => {
     const handleChange = (e) => {
         const {name, value} = e.target;
         setformData({...formData, [name]: value});
-        console.log(formData);
     };
 
     const handleSubmit = async (e) =>{
@@ -53,8 +52,6 @@ const AdminPage = ({data}) => {
             setUpdate(false);
             return;
         }
-
-        console.log(formData);
 
         try{
             const response = await fetch('https://localhost:7198/api/Website/UpdateServerInfo',{
@@ -73,7 +70,7 @@ const AdminPage = ({data}) => {
                 throw new Error('Error');
             }
         } catch(error){
-            console.log('Something went wrong');
+            console.log('Something went wrong', error.message);
             setUpdate(false);
             setError(true);
         }

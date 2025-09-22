@@ -33,6 +33,7 @@ function aboutAdminReducer(state, action){
         case ACTION.SET_FORM_ERROR:
             return {
                 ...state,
+                submit: { loading: false, error: null, success: false },
                 formError: action.payload,
             }
         case ACTION.CLEAR_FORM_ERROR:
@@ -134,7 +135,6 @@ const AboutPage = () => {
             dispatch({ type: ACTION.SUBMIT_SUCCESS });
         } catch (err){
             dispatch({ type: ACTION.SUBMIT_ERROR, payload: err.message });
-            console.log("Somehting went wrong", err);
         }
     }
 

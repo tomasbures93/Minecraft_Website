@@ -6,7 +6,6 @@ import ErrorForm from "./ErrorForm"
 import TextArea from "./TextArea"
 
 const Form = ({handleSubmit, handleChange, formData, formError, preview, update, handlePreview, textSubmit, textLoading}) => {
-    
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -16,9 +15,9 @@ const Form = ({handleSubmit, handleChange, formData, formError, preview, update,
                 {formError.text && <ErrorForm text={formError.text} />}
                 {preview && <Preview text={formData.text} /> }
                 {update ?
-                <ButtonLoading text={textLoading} />
-                :
-                <ButtonSubmit text={textSubmit} />}    
+                    <ButtonLoading text={textLoading} />:
+                    <ButtonSubmit text={textSubmit} />
+                }    
                 <ButtonNormal text="Preview" style="mt-3 ms-2 btn btn-secondary shadow" onClick={handlePreview}/>                   
             </form>    
         </>
