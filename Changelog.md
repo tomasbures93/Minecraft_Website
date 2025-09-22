@@ -1,5 +1,10 @@
 # Changelog
 
+## 22.09.2025
+### Website
+- `RulesPage.jsx` refactored for improved structure and readability
+- `HomePage.jsx` refactored for improved structure and readability ( ARE YOU SURE ABOUT THAT? )
+
 ## 21.09.2025
 ### Website
 - `Pagination.jsx` fixed issue where currentPage was not visible for user.
