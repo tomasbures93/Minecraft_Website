@@ -2,9 +2,9 @@
 {
     public class ChangePINModel
     {
-        public int OldPIN { get; set; }
-        public int NewPIN{ get; set; }
-        public int NewPINSecondTime { get; set; }
+        public string OldPIN { get; set; }
+        public string NewPIN { get; set; }
+        public string NewPINSecondTime { get; set; }
         public string Password { get; set; }
     }
 }

@@ -15,10 +15,12 @@ namespace Minecraft_Website_API.Controllers
     public class WebsiteController : ControllerBase
     {
         private readonly AppDbContext _appDbContext;
+        private readonly IConfiguration _configuration;
 
-        public WebsiteController(AppDbContext appDbContext)
+        public WebsiteController(AppDbContext appDbContext, IConfiguration configuration)
         {
             _appDbContext = appDbContext;
+            _configuration = configuration;
         }
 
         #region Public Methods
@@ -32,7 +34,7 @@ namespace Minecraft_Website_API.Controllers
                 page = 1;
             }
             int articlesCount = _appDbContext.HomePage.Count();
-            int itemsPerPage = 6;
+            int itemsPerPage = int.Parse(_configuration.GetSection("Pagination").GetSection("Homepage").Value);
             int totalPages = (int)Math.Ceiling(articlesCount / (decimal)itemsPerPage);
             List<Article> homePage = _appDbContext.HomePage.OrderByDescending(d => d.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).ToList();
             if (homePage.Count == 0)

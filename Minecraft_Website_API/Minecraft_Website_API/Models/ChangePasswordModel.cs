@@ -5,6 +5,6 @@
         public string OldPassword { get; set; }
         public string NewPassword { get; set; }
         public string NewPasswordSecondTime { get; set; }
-        public int PIN { get; set; }
+        public string PIN { get; set; }
     }
 }

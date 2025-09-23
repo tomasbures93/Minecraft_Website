@@ -84,14 +84,14 @@ namespace Minecraft_Website_API.Controllers
             return Ok("logged in");
         }
 
-        [HttpPost]
+        [HttpPut]
         [Authorize]
         public IActionResult ChangePassword([FromBody] ChangePasswordModel model)
         {
             User user = _appDbContext.Users.FirstOrDefault();
             if(user == null 
                 || !BCrypt.Net.BCrypt.Verify(model.OldPassword, user.PasswordHash)
-                || !BCrypt.Net.BCrypt.Verify(model.PIN.ToString(), user.PINHash)) {
+                || !BCrypt.Net.BCrypt.Verify(model.PIN, user.PINHash)) {
                 return BadRequest("Old password or PIN does not match.");
             }
             if(BCrypt.Net.BCrypt.Verify(model.NewPassword, user.PasswordHash))
@@ -112,18 +112,18 @@ namespace Minecraft_Website_API.Controllers
             return Ok("Password Changed");
         }
 
-        [HttpPost]
+        [HttpPut]
         [Authorize]
         public IActionResult ChangePin([FromBody] ChangePINModel model)
         {
             var user = _appDbContext.Users.FirstOrDefault();
             if(user == null
                 || !BCrypt.Net.BCrypt.Verify(model.Password, user.PasswordHash)
-                || !BCrypt.Net.BCrypt.Verify(model.OldPIN.ToString(), user.PINHash))
+                || !BCrypt.Net.BCrypt.Verify(model.OldPIN, user.PINHash))
             {
                 return BadRequest("Password or old PIN does not match.");
             }
-            if(BCrypt.Net.BCrypt.Verify(model.NewPIN.ToString(), user.PINHash))
+            if(BCrypt.Net.BCrypt.Verify(model.NewPIN, user.PINHash))
             {
                 return BadRequest("Your new PIN cant be the same as your Old PIN");
             }
@@ -131,11 +131,11 @@ namespace Minecraft_Website_API.Controllers
             {
                 return BadRequest("New PIN does not match");
             }
-            if (!_validate.ValidatePIN(model.NewPIN.ToString()))
+            if (!_validate.ValidatePIN(model.NewPIN))
             {
                 return BadRequest("PIN has to be atleast 5 digits long");
             }
-            user.PINHash = BCrypt.Net.BCrypt.HashString(model.NewPIN.ToString());
+            user.PINHash = BCrypt.Net.BCrypt.HashString(model.NewPIN);
             _appDbContext.Users.Update(user);
             _appDbContext.SaveChanges();
             return Ok("PIN changed");
