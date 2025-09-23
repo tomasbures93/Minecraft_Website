@@ -1,5 +1,15 @@
 # Changelog
 
+## 23.09.2025
+### API
+- `Pagination` - moved configuration from hardcoded values to appsettings.json
+- `ChangePassword` & `ChangePIN` – updated HTTP method from POST to PUT for better RESTful design
+
+### Website
+- `ErrorAdmin.jsx` - added text prop with a default value
+- `ChangePassword.jsx` – admin can now change their password ( and should do after first login )
+- `ChangePin.jsx` - admin can now change their PIN ( and should do after first login )
+
 ## 22.09.2025
 ### Website
 - `RulesPage.jsx` refactored for improved structure and readability
