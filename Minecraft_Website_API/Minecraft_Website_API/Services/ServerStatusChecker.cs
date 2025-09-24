@@ -34,7 +34,6 @@ namespace Minecraft_Website_API.Services
                         {
                             CurrentStatus = "Online";
                             client.EndConnect(result);
-                            logger.LogInformation("Checked status");
                         } else
                         {
                             CurrentStatus = "Offline";

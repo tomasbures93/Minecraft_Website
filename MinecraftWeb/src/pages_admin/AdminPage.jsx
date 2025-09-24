@@ -6,6 +6,7 @@ import ButtonLoading from "../components_admin/ButtonLoading";
 import ButtonSubmit from "../components_admin/ButtonSubmit";
 import ErrorForm from "../components_admin/ErrorForm";
 import SingleInput from "../components_admin/SingleInput";
+import { BASE_URL, API_ADMIN_ENDPOINTS } from '../api'
 
 const AdminPage = ({data}) => {
     const [formData, setformData] = useState({
@@ -54,7 +55,7 @@ const AdminPage = ({data}) => {
         }
 
         try{
-            const response = await fetch('https://localhost:7198/api/Website/UpdateServerInfo',{
+            const response = await fetch(`${BASE_URL}${API_ADMIN_ENDPOINTS.EDIT_SERVERINFO}`,{
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),

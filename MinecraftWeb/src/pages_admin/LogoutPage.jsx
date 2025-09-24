@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL, API_AUTH_ENDPOINTS } from '../api'
 
 const LogoutPage = () => {
     const navigate = useNavigate();
 
     const logout = async () => {
         try {
-            const response = await fetch("https://localhost:7198/api/Auth/Logout", {
+            const response = await fetch(`${BASE_URL}${API_AUTH_ENDPOINTS.LOGOUT}`, {
                 method: 'POST',
                 credentials: 'include'
             });

@@ -4,6 +4,7 @@ import Error from "../components/Error";
 import HomePageData from "../components/HomePageData";
 import Pagination from "../components/Pagination";
 import NoData from "../components/NoData";
+import { BASE_URL, API_PUBLIC_ENDPOINTS } from '../api';
 
 const ACTION = {
     FETCH_START: "FETCH_START",
@@ -35,7 +36,7 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             dispatch({type: ACTION.FETCH_START});
-            const url = "https://localhost:7198/api/Website/GetHomePagePaged?page=" + pagination.currentPage;
+            const url = `${BASE_URL}${API_PUBLIC_ENDPOINTS.HOMEPAGE}?page=` + pagination.currentPage;
 
             try{
                 const response = await fetch(url);

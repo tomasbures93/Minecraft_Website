@@ -83,7 +83,7 @@ namespace Minecraft_Website_API.Controllers
                 page = 1;
             }
             int changelogCount = _appDbContext.ChangeLogPage.Count();
-            int itemsPerPage = 8;
+            int itemsPerPage = int.Parse(_configuration.GetSection("Pagination").GetSection("Changelog").Value);
             int totalPages = (int)Math.Ceiling(changelogCount / (double)itemsPerPage);
             List<ChangeLogPage> changeLog = _appDbContext.ChangeLogPage.OrderByDescending(d => d.Id).Skip((page - 1) * itemsPerPage).Take(itemsPerPage).ToList();
             if (changeLog.Count == 0)

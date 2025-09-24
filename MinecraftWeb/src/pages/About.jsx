@@ -3,6 +3,7 @@ import Loading from "../components/Loading";
 import Error from "../components/Error";
 import AboutData from "../components/AboutData";
 import NoData from "../components/NoData";
+import { BASE_URL, API_PUBLIC_ENDPOINTS} from '../api'
 
 const ACTIONS = {
     FETCH_START: "FETCH_START",
@@ -37,7 +38,7 @@ const About = () => {
             dispatch({type: ACTIONS.FETCH_START });
 
             try{
-                const response = await fetch("https://localhost:7198/api/Website/GetAboutPage");
+                const response = await fetch(`${BASE_URL}${API_PUBLIC_ENDPOINTS.ABOUTPAGE}`);
                 if(!response.ok) throw new Error("Failed to fetch");
 
                 const data = await response.json();

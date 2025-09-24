@@ -8,6 +8,7 @@ import ButtonSubmit from "../components_admin/ButtonSubmit";
 import ButtonNormal from "../components_admin/ButtonNormal";
 import Preview from "../components_admin/Preview";
 import ErrorForm from "../components_admin/ErrorForm";
+import { BASE_URL, API_ADMIN_ENDPOINTS, API_PUBLIC_ENDPOINTS } from '../api'
 
 const ACTION = {
     UPDATE_FIELD: "UPDATE_FIELD",
@@ -102,7 +103,7 @@ const RulesPage = () => {
         const fetchRules = async () => {
             dispatch({ type: ACTION.FETCH_START });
             try{
-                const response = await fetch('https://localhost:7198/api/Website/GetRulesPage');
+                const response = await fetch(`${BASE_URL}${API_PUBLIC_ENDPOINTS.RULES}`);
                 if(!response.ok) throw new Error("Failed to fetch");
 
                 const data = await response.json();
@@ -130,7 +131,7 @@ const RulesPage = () => {
         }
 
         try{
-            const response = await fetch('https://localhost:7198/api/Website/UpdateRulesPage',{
+            const response = await fetch(`${BASE_URL}${API_ADMIN_ENDPOINTS.EDIT_RULES}`,{
                 method: 'PUT', 
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(state.formData),

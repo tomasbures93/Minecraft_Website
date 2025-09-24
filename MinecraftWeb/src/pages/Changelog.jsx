@@ -4,6 +4,7 @@ import Loading from "../components/Loading";
 import Error from "../components/Error";
 import Pagination from "../components/Pagination";
 import NoData from "../components/NoData";
+import { BASE_URL, API_PUBLIC_ENDPOINTS }from "../api" 
 
 const ACTION = {
     FETCH_START: "FETCH_START",
@@ -36,8 +37,7 @@ const Changelog = () => {
         const fetchData = async () => {
             dispatch({type: ACTION.FETCH_START});
 
-            const url = "https://localhost:7198/api/Website/GetChangeLogPagePaged?page=" + pagination.currentPage;
-
+            const url = `${BASE_URL}${API_PUBLIC_ENDPOINTS.CHANGELOG}?page=` + pagination.currentPage;
             try{
                 const response = await fetch(url);
                 if(!response.ok) throw new Error("Failed to fetch");

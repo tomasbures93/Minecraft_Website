@@ -15,7 +15,7 @@ namespace Minecraft_Website_API.Models
         {
             var info = new ServerInfo
             {
-                IP = "127.0.01",
+                IP = "127.0.0.1",
                 Port = "25565",
                 ServerName = "Your Server",
                 GameVersion = "Java Edition 1.21.4",

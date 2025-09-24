@@ -5,6 +5,7 @@ import SuccessAdmin from "../components_admin/SuccessAdmin";
 import ArticleList from "../components_admin/ArticleList";
 import Form from "../components_admin/Form";
 import ModalDialog from "../components_admin/ModalDialog";
+import { BASE_URL, API_ADMIN_ENDPOINTS } from '../api'
 
 const ACTION = {
     CREATE_POST: "CREATE_POST",
@@ -216,7 +217,7 @@ const HomePage = () => {
             dispatch({ type: ACTION.FETCH_START });
             
             try{
-                const response = await fetch('https://localhost:7198/api/Website/GetHomePage', {
+                const response = await fetch(`${BASE_URL}${API_ADMIN_ENDPOINTS.GET_ARTICLES}`, {
                     method: 'GET', 
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include'
@@ -247,7 +248,7 @@ const HomePage = () => {
         }
 
         try {
-            const response = await fetch('https://localhost:7198/api/Website/AddArticle', {
+            const response = await fetch(`${BASE_URL}${API_ADMIN_ENDPOINTS.ADD_ARTICLE}`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: { 'Content-Type': 'application/json' },
@@ -277,7 +278,7 @@ const HomePage = () => {
         }
 
         try {
-            const response = await fetch('https://localhost:7198/api/Website/EditArticle', {
+            const response = await fetch(`${BASE_URL}${API_ADMIN_ENDPOINTS.EDIT_ARTICLE}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updateState.formData),
@@ -293,7 +294,7 @@ const HomePage = () => {
 
     const handleDelete = async (id) =>{
         dispatchUpdate({ type: UDACTION.DELETE_START });
-        const url = 'https://localhost:7198/api/Website/DeleteArticle?id=' + id;
+        const url = `${BASE_URL}${API_ADMIN_ENDPOINTS.DELETE_ARTICLE}?id=` + id;
         try{
             const response = await fetch(url, {
                 method: 'Delete',

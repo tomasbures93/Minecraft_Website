@@ -2,6 +2,7 @@ import { SpinnerGap } from "phosphor-react";
 import { useEffect, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 import ErrorAdmin from "../components_admin/ErrorAdmin";
+import { BASE_URL, API_AUTH_ENDPOINTS } from '../api'
 
 const ACTION = {
     UPDATE_FIELD: "UPDATE_FIELD",
@@ -52,7 +53,7 @@ const Login = () => {
         dispatch({type: ACTION.FETCH_START});
 
         try{
-            const response = await fetch("https://localhost:7198/api/Auth/Login", {
+            const response = await fetch(`${BASE_URL}${API_AUTH_ENDPOINTS.LOGIN}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(state.formData),

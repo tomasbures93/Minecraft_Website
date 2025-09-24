@@ -3,6 +3,7 @@ import NavbarAdmin from "../components_admin/NavbarAdmin"
 import SuccessAdmin from "../components_admin/SuccessAdmin"
 import ErrorAdmin from "../components_admin/ErrorAdmin"
 import ButtonLoading from "../components_admin/ButtonLoading"
+import { BASE_URL, API_AUTH_ENDPOINTS } from '../api'
 
 const ACTION = {
     UPDATE_FIELD: "UPDATE_FIELD",
@@ -71,7 +72,7 @@ const ChangePassword = () => {
             }
 
         try{
-            const response = await fetch('https://localhost:7198/api/Auth/ChangePassword',{
+            const response = await fetch(`${BASE_URL}${API_AUTH_ENDPOINTS.CHANGE_PASSWORD}`,{
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(state.formData),

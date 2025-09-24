@@ -23,12 +23,13 @@ import HomePage from "./pages_admin/HomePage";
 import ChangelogPage from "./pages_admin/ChangelogPage";
 import ChangePassword from "./pages_admin/ChangePassword";
 import ChangePin from "./pages_admin/ChangePin";
+import { BASE_URL, API_PUBLIC_ENDPOINTS } from './api'
 
 function App() {
   const [info, setInfo] = useState([]);
 
   useEffect(() => {
-          fetch("https://localhost:7198/api/Website/GetServerInfo")
+          fetch(`${BASE_URL}${API_PUBLIC_ENDPOINTS.SERVERINFO}`)
               .then(response => response.json())
               .then(json => {
                   setInfo(json);

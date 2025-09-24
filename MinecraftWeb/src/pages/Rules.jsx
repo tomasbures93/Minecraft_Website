@@ -3,6 +3,7 @@ import Loading from "../components/Loading";
 import Error from "../components/Error";
 import RulesData from "../components/RulesData";
 import NoData from "../components/NoData";
+import { BASE_URL, API_PUBLIC_ENDPOINTS } from '../api'
 
 const ACTION = {
     FETCH_START: "FETCH_START",
@@ -35,7 +36,7 @@ const Rules = () => {
             dispatch({ type: ACTION.FETCH_START });
 
             try{
-                const response = await fetch("https://localhost:7198/api/Website/GetRulesPage");
+                const response = await fetch(`${BASE_URL}${API_PUBLIC_ENDPOINTS.RULES}`);
                 if(!response.ok) throw new Error("Failed to fetch");
 
                 const data = await response.json();
