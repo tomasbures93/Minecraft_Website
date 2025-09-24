@@ -1,5 +1,12 @@
 # Changelog
 
+## 24.09.2025
+### API
+- `Changelog Pagination` - fixed; now works correctly
+
+### Website
+- `api.js` - central file created to manage all backend links (`BASE_URL` + `END_POINTS`) in one place for easier maintenance and scalability
+
 ## 23.09.2025
 ### API
 - `Pagination` - moved configuration from hardcoded values to appsettings.json
