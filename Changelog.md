@@ -1,5 +1,13 @@
 # Changelog
 
+## 25.09.2025
+### API
+- `FirstSetup` - prepared welcome text for new users with basic instructions on how to use the website
+
+### Website
+- `Admin Changelog` - fixed issue where the page appeared blank; now works properly (Fixes #1)
+- `TextArea.jsx` – added <hr> support as a Markdown element
+
 ## 24.09.2025
 ### API
 - `Changelog Pagination` - fixed; now works correctly
