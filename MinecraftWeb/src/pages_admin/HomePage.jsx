@@ -41,6 +41,7 @@ const initialFormData = {
     datum: new Date().toLocaleDateString()
 }
 
+
 const initialState = {
     fetch: {
         loading: false,
@@ -304,7 +305,6 @@ const HomePage = () => {
 
             if(response.ok){
                 const artikelAfter = state.fetch.article.filter(item => item.id !== id);
-                console.log(artikelAfter);
                 dispatch({ type: ACTION.REMOVE_ARTICLE, payload: artikelAfter})
                 dispatchUpdate({ type: UDACTION.DELETE_SUCCESS });
             } else {
@@ -367,7 +367,7 @@ const HomePage = () => {
                     </div>
             :
                     <div className="mt-4 container">
-                        <ArticleList data={state.fetch} handleEdit={handleEdit} handleId={handleId} toggle="modal" target="#exampleModal" />
+                        <ArticleList data={state.fetch.article} handleEdit={handleEdit} handleId={handleId} toggle="modal" target="#exampleModal" />
                         <ModalDialog handleDelete={handleDelete} id={id} text="Article"/>
                         {updateState.delete.success && <SuccessAdmin text="Article deleted!" />}
                         {updateState.formData != null && 

@@ -33,8 +33,8 @@ namespace Minecraft_Website_API.Models
             DateTime date = DateTime.Now;
             var article = new Article
             {
-                Title = "Welcome",
-                Text = "Thank you so much for installing bla bla bla",
+                Title = "Welcome to Minecraft Website! 🎉",
+                Text = "Thank you for installing **Minecraft Website**!  \r\nWe’re excited to have you on board and can’t wait for you to start exploring.\r\n\r\n### Getting Started:\r\n- **Login** with the default credentials provided.\r\n- **Explore the Web App** to get familiar with its features and layout.\r\n- **Change your Password and PIN immediately** to secure your account.\r\n- **Update your server information**, such as the **Server Name**, **Server IP**, and other settings.\r\n___\r\n### How To get in AdminPanel:\r\nYou can access the Admin Panel in two ways:\r\n1) **Direct URL:** Type the following into your browser’s address bar: *\"yourwebsiteurl.com/AdminPage\"*\r\n2) **Via Footer Link:** Click the **server name** (default: *Your Name*) in the bottom-right corner of the website’s footer.\r\n___\r\n### How To use Markdown\r\nWhen creating an Article, Changelog, or editing the About or Rules sections, you can use Markdown to style your text.  \r\nYou’ll find Markdown formatting buttons above the text area in the Admin Panel.\r\n\r\n##### Steps to Use Markdown:\r\n1) Write your text in the editor.\r\n2) Click the **Preview** button at the bottom to see how it will look.\r\n3) Highlight the text you want to format.\r\n4) Click one of the Markdown buttons above the text area.\r\n5) Check the Preview window to confirm the formatting.\r\n\r\n##### Supported Markdowns:  \r\nB - **Bold Text**  \r\nI - *Italic Text*  \r\nLink - [GitHub](https://github.com/tomasbures93)  \r\nHeadings - from H1 to H6\r\n###### H6\r\n##### H5\r\n#### H4\r\n### H3\r\n## H2\r\n# H1\r\n___\r\n### Need Help?\r\nIf you need assistance or run into any issues, feel free to reach out to me on GitHub: [https://github.com/tomasbures93](https://github.com/tomasbures93)",
                 Datum = date.ToString()
             };
 

@@ -3,7 +3,7 @@ import { Pencil, Trash } from "phosphor-react"
 const ArticleList = ({data, handleEdit, toggle, target, handleId}) => {
     return (
         <>
-            {data.article.map(item => 
+            {data.map(item => 
                 <div className="row" key={item.id}>
                     <div className="col-sm mb-1">
                         <strong>{item.title}</strong> {item.datum && <span>- {item.datum}</span>}

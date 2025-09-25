@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { TextBolder, TextHThree, TextItalic, TextHOne, TextHTwo, TextHFour, TextHFive, TextHSix, LinkSimple } from "phosphor-react"
+import { TextBolder, TextHThree, TextItalic, TextHOne, TextHTwo, TextHFour, TextHFive, TextHSix, LinkSimple, Minus } from "phosphor-react"
 
 
 const TextArea = ({handleChange, value}) => {
@@ -51,6 +51,9 @@ const TextArea = ({handleChange, value}) => {
             case 'h6':
                 prefix = "###### ";
                 break;
+            case 'hr':
+                prefix = "___";
+                break;
             default:
                 return;
         }
@@ -81,6 +84,7 @@ const TextArea = ({handleChange, value}) => {
                 <button onClick={handleText} className="btn text-white border me-1 mb-1" data-format="h4"><TextHFour size={20} className="markDown"/></button>
                 <button onClick={handleText} className="btn text-white border me-1 mb-1" data-format="h5"><TextHFive size={20} className="markDown"/></button>
                 <button onClick={handleText} className="btn text-white border me-1 mb-1" data-format="h6"><TextHSix size={20} className="markDown"/></button>
+                <button onClick={handleText} className="btn text-white border me-1 mb-1" data-format="hr"><Minus size={20} className="markDown"/></button>
             </div>
             <textarea ref={textAreaRef} className="form-control dark-input shadow" rows="15" name="text" onChange={handleChange} value={value}></textarea>
         </>

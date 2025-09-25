@@ -31,7 +31,9 @@ const ChangelogPage = () => {
             credentials: 'include'
         })
             .then(response => response.json())
-            .then(json => setChangeLog(json.sort((a, b) => b.id - a.id)))
+            .then(json => {
+                setChangeLog(json.sort((a, b) => b.id - a.id))
+            })
             .catch(() => console.log("Something went wrong !! Fetching data."))
     }
 
@@ -121,7 +123,6 @@ const ChangelogPage = () => {
 
         const change = changeLog.find(item => item.id == id);
         setFormData(change); 
-        console.log("Edit button", id);
     }
 
     const handleDelete = async (id) => {
@@ -153,7 +154,6 @@ const ChangelogPage = () => {
 
     const handleEditSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
         const newErrors = validateForm(formData);
         setFormError(newErrors);
 
@@ -173,7 +173,6 @@ const ChangelogPage = () => {
             });
 
             if(response.ok){
-                console.log("Update okay");
                 setFinish(true);
                 setError(false);
             } else {
